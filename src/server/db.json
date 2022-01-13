@@ -5,7 +5,28 @@
       "name": "Mariusz",
       "surname": "Json",
       "company": "Winners.js",
+      "technology": "React"
+    },
+    {
+      "id": 2,
+      "name": "Mateusz",
+      "surname": "Tuna",
+      "company": "Huari",
       "technology": "Angular"
+    },
+    {
+      "id": 3,
+      "name": "Michael",
+      "surname": "Jorban",
+      "company": "Winners.js",
+      "technology": "Node.js"
+    },
+    {
+      "id": 4,
+      "name": "Billie",
+      "surname": "Jean",
+      "company": "Winners.js",
+      "technology": "Svelte"
     }
   ],
   "companies": [

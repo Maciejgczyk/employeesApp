@@ -1,7 +1,8 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
-import {EmployeesService} from "../../services/employees.service";
-import {Subject} from "rxjs";
-import {takeUntil} from "rxjs/operators";
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { EmployeesService } from "../../services/employees.service";
+import { Subject } from "rxjs";
+import { takeUntil } from "rxjs/operators";
+import { IEmployee } from 'src/app/interfaces/employee.model';
 
 @Component({
   selector: 'app-employees-container',
@@ -10,6 +11,7 @@ import {takeUntil} from "rxjs/operators";
 })
 export class EmployeesContainerComponent implements OnInit, OnDestroy {
   destroyComponent$: Subject<boolean> = new Subject<boolean>();
+  allEmployees: IEmployee[];
 
   constructor(private employeesService: EmployeesService) { }
 
@@ -19,8 +21,8 @@ export class EmployeesContainerComponent implements OnInit, OnDestroy {
         takeUntil(this.destroyComponent$)
       )
       .subscribe(
-      el => console.log(el)
-    )
+        items => this.allEmployees = items
+      )
   }
 
   ngOnDestroy(): void {
