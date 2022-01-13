@@ -1,0 +1,22 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "name": "Mariusz",
+      "surname": "Json",
+      "company": "Winners.js",
+      "technology": "Angular"
+    }
+  ],
+  "companies": [
+    {
+      "id": 1,
+      "name": "Winners.js",
+      "color": "#472db3"
+    }
+  ],
+  "admin": {
+    "username": "admin",
+    "password": "admin"
+  }
+}
