@@ -1,0 +1,5 @@
+@import 'src/app/styles/_mixins';
+
+:host {
+  @include flex-spread;
+}

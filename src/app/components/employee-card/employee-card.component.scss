@@ -1,0 +1,39 @@
+@import 'src/app/styles/_variables';
+@import 'src/app/styles/_mixins';
+
+.employee {
+  cursor: pointer;
+  transition: .1s;
+  padding: 24px 8px;
+  width: 262px;
+  background-color: $bg-white;
+
+  border: solid 1px rgb(0 0 0 / 5%);
+  border-radius: 6px;
+
+  &:hover {
+    transform: scale(1.03);
+  }
+
+  &__name {
+    font-weight: 500;
+  }
+
+  &__company {
+    @include flex-vertical-center;
+  }
+
+  &__company--name {
+    font-size: 14px;
+  }
+}
+
+.color-placeholder {
+  width: 10px;
+  height: 10px;
+
+  border-radius: 50%;
+  margin: 0px 8px 0px 0px;
+
+  background-color: rgb(0, 4, 255);
+}

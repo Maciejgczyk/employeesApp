@@ -1,3 +1,1 @@
-<section>
-  <app-employee-card></app-employee-card>
-</section>
+<app-employee-card *ngFor="let employee of allEmployees" [employee]="employee"></app-employee-card>
