@@ -1,0 +1,29 @@
+@import 'src/app/styles/_variables';
+@import 'src/app/styles/_mixins';
+
+.header {
+  @include flex-spread;
+
+  background-color: $bg-gray;
+  margin-bottom: 32px;
+  padding: 16px;
+
+  &__input {
+    color: $white;
+    width: 262px;
+    background: transparent;
+
+    border: none;
+    border-bottom: solid 1px $white;
+    outline: none;
+
+    &::placeholder {
+      color: $white;
+    }
+  }
+}
+
+.header-btn {
+  color: $white;
+  margin-left: 16px;
+}
