@@ -8,12 +8,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { EmployeesContainerComponent } from './components/employees-container/employees-container.component';
 import { EmployeeCardComponent } from './components/employee-card/employee-card.component';
 import { HttpClientModule } from "@angular/common/http";
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule } from '@angular/material/button';
-import { MatInputModule } from '@angular/material/input';
-import { MatFormFieldModule } from '@angular/material/form-field';
-
-
+import {MaterialModule} from "./shared/modules/material.module";
 
 @NgModule({
   declarations: [
@@ -21,19 +16,16 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MainComponent,
     HeaderComponent,
     EmployeesContainerComponent,
-    EmployeeCardComponent
+    EmployeeCardComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    BrowserAnimationsModule,
-    MatButtonModule,
-    MatInputModule,
-    MatFormFieldModule
+    MaterialModule
   ],
   providers: [
-    HttpClientModule
+    HttpClientModule,
   ],
   bootstrap: [AppComponent]
 })
