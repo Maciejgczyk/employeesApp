@@ -9,6 +9,7 @@ import { EmployeesContainerComponent } from './components/employees-container/em
 import { EmployeeCardComponent } from './components/employee-card/employee-card.component';
 import { HttpClientModule } from "@angular/common/http";
 import {MaterialModule} from "./shared/modules/material.module";
+import { AddEmployeeComponent } from './components/dialogs/add-employee/add-employee.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import {MaterialModule} from "./shared/modules/material.module";
     HeaderComponent,
     EmployeesContainerComponent,
     EmployeeCardComponent,
+    AddEmployeeComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from "@angular/material/dialog";
+import { AddEmployeeComponent } from '../dialogs/add-employee/add-employee.component';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dialog: MatDialog) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void { }
+
+  addEmployee(): void {
+    this.dialog.open(AddEmployeeComponent, {
+      data: 'tu będzie formularz'
+    });
   }
 
 }
