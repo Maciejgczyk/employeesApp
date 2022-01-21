@@ -4,18 +4,13 @@
 .header {
   @include flex-spread;
 
-  background-color: $bg-gray;
+  background-color: $blue;
   margin-bottom: 32px;
   padding: 16px;
 
   &__input {
-    color: $white;
+    @include input-field;
     width: 262px;
-    background: transparent;
-
-    border: none;
-    border-bottom: solid 1px $white;
-    outline: none;
 
     &::placeholder {
       color: $white;

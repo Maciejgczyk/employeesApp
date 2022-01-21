@@ -14,9 +14,11 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void { }
 
   addEmployee(): void {
-    this.dialog.open(AddEmployeeComponent, {
-      data: 'tu będzie formularz'
-    });
+    this.dialog.open(AddEmployeeComponent)
+  }
+
+  searchValue(searchValue: string) {
+    console.log(searchValue)
   }
 
 }

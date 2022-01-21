@@ -1,1 +1,26 @@
-{{ data }}
+<div class="container">
+  <h2 class="container__title">Create employee</h2>
+  <form>
+    <div class="container__form--fields">
+      <mat-form-field appearance="fill">
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="Mark" />
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Surname</mat-label>
+        <input matInput placeholder="Zuckenberg" />
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Favorite food</mat-label>
+        <mat-select>
+          <mat-option value="Todo"> Todo </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Technology</mat-label>
+        <input matInput placeholder="Angular" />
+      </mat-form-field>
+    </div>
+    <button type="submit" mat-flat-button color="primary">Create</button>
+  </form>
+</div>

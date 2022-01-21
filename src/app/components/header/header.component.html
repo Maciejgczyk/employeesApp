@@ -1,5 +1,9 @@
 <header class="header">
-  <input class="header__input" placeholder="Look for...">
+  <input
+    (input)="searchValue($event.target.value)"
+    type="text"
+    class="header__input"
+    placeholder="Look for...">
   <div class="header__options">
     <button class="header-btn" mat-button>Filters</button>
     <button (click)="addEmployee()" class="header-btn" mat-button>Add employee</button>

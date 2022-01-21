@@ -1,0 +1,19 @@
+@import "src/app/styles/_mixins";
+@import "src/app/styles/_variables";
+
+.container {
+  width: 498px;
+
+  &__title {
+    color: $blue;
+  }
+
+  &__form--fields {
+    @include flex-spread;
+    flex-wrap: wrap;
+
+    .mat-form-field {
+      width: 48%;
+    }
+  }
+}

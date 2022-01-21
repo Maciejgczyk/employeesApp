@@ -10,6 +10,7 @@ import { EmployeeCardComponent } from './components/employee-card/employee-card.
 import { HttpClientModule } from "@angular/common/http";
 import {MaterialModule} from "./shared/modules/material.module";
 import { AddEmployeeComponent } from './components/dialogs/add-employee/add-employee.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { AddEmployeeComponent } from './components/dialogs/add-employee/add-empl
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    MaterialModule
+    MaterialModule,
+    BrowserAnimationsModule
   ],
   providers: [
     HttpClientModule,

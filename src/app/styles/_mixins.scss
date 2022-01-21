@@ -1,3 +1,5 @@
+@import "_variables";
+
 @mixin flex-center-center {
   display: flex;
   align-items: center;
@@ -12,4 +14,17 @@
 @mixin flex-spread {
   display: flex;
   justify-content: space-between;
+}
+
+@mixin input-field {
+  color: $white;
+  background: transparent;
+
+  border: none;
+  border-bottom: solid 1px $white;
+  outline: none;
+
+  &::placeholder {
+    color: $white;
+  }
 }
