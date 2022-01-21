@@ -1,8 +1,11 @@
 <div class="employee">
   <span class="employee__name"> {{ employee.name }} {{ employee.surname }}</span>
-
   <div class="employee__company">
-    <div class="color-placeholder"></div>
+    <div
+      [ngStyle]="{'background': employee.company.color}"
+      class="employee__company--color"
+    ></div>
     <span class="employee__company--name"> {{ employee.company.name }} </span>
   </div>
+  <span class="employee__technology">{{ employee.technology }}</span>
 </div>
