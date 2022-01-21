@@ -2,4 +2,5 @@
 
 :host {
   @include flex-spread;
+  flex-wrap: wrap;
 }

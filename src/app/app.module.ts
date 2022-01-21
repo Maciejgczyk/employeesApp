@@ -11,6 +11,7 @@ import { HttpClientModule } from "@angular/common/http";
 import {MaterialModule} from "./shared/modules/material.module";
 import { AddEmployeeComponent } from './components/dialogs/add-employee/add-employee.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -21,13 +22,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     EmployeeCardComponent,
     AddEmployeeComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    MaterialModule,
-    BrowserAnimationsModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        MaterialModule,
+        BrowserAnimationsModule,
+        ReactiveFormsModule
+    ],
   providers: [
     HttpClientModule,
   ],

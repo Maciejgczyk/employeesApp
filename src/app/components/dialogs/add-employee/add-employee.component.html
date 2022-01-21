@@ -1,24 +1,26 @@
 <div class="container">
   <h2 class="container__title">Create employee</h2>
-  <form>
+  <form [formGroup]="employeeForm" (ngSubmit)="createEmployee()">
     <div class="container__form--fields">
       <mat-form-field appearance="fill">
         <mat-label>Name</mat-label>
-        <input matInput placeholder="Mark" />
+        <input formControlName="name" matInput placeholder="Mark" />
       </mat-form-field>
       <mat-form-field appearance="fill">
         <mat-label>Surname</mat-label>
-        <input matInput placeholder="Zuckenberg" />
+        <input formControlName="surname" matInput placeholder="Zuckenberg" />
       </mat-form-field>
       <mat-form-field appearance="fill">
-        <mat-label>Favorite food</mat-label>
-        <mat-select>
-          <mat-option value="Todo"> Todo </mat-option>
+        <mat-label>Company</mat-label>
+        <mat-select formControlName="company" >
+          <mat-option *ngFor="let company of allCompanies" [value]="company">
+            {{ company.name }}
+          </mat-option>
         </mat-select>
       </mat-form-field>
       <mat-form-field appearance="fill">
         <mat-label>Technology</mat-label>
-        <input matInput placeholder="Angular" />
+        <input formControlName="technology" matInput placeholder="Angular" />
       </mat-form-field>
     </div>
     <button type="submit" mat-flat-button color="primary">Create</button>

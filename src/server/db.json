@@ -1,38 +1,113 @@
 {
   "employees": [
     {
-      "id": 1,
-      "name": "Mariusz",
-      "surname": "Json",
-      "company": "Winners.js",
-      "technology": "React"
+      "name": "Mark",
+      "surname": "Zucc",
+      "company": {
+        "id": 1,
+        "name": "Winners.js",
+        "color": "#472db3"
+      },
+      "technology": "React",
+      "id": 1
     },
     {
-      "id": 2,
-      "name": "Mateusz",
-      "surname": "Tuna",
-      "company": "Huari",
-      "technology": "Angular"
+      "name": "Linus",
+      "surname": "Webapp",
+      "company": {
+        "id": 1,
+        "name": "Winners.js",
+        "color": "#472db3"
+      },
+      "technology": "Svelte",
+      "id": 2
     },
     {
-      "id": 3,
-      "name": "Michael",
-      "surname": "Jorban",
-      "company": "Winners.js",
-      "technology": "Node.js"
+      "name": "Marcus",
+      "surname": "Zaking",
+      "company": {
+        "id": 3,
+        "name": "Facebook",
+        "color": "#472db3"
+      },
+      "technology": "Angular",
+      "id": 3
     },
     {
-      "id": 4,
-      "name": "Billie",
-      "surname": "Jean",
-      "company": "Winners.js",
-      "technology": "Svelte"
+      "name": "Matthew",
+      "surname": "Kentocky",
+      "company": {
+        "id": 4,
+        "name": "Apple",
+        "color": "#472db3"
+      },
+      "technology": "React.js",
+      "id": 4
+    },
+    {
+      "name": "Mohamed",
+      "surname": "Salah",
+      "company": {
+        "id": 2,
+        "name": "Microsoft",
+        "color": "#472db3"
+      },
+      "technology": "Node.js",
+      "id": 5
+    },
+    {
+      "name": "Royo",
+      "surname": "Washington",
+      "company": {
+        "id": 4,
+        "name": "Apple",
+        "color": "#472db3"
+      },
+      "technology": "Python",
+      "id": 6
+    },
+    {
+      "name": "Cobolin",
+      "surname": "Macintosh",
+      "company": {
+        "id": 2,
+        "name": "Microsoft",
+        "color": "#472db3"
+      },
+      "technology": "Assembler",
+      "id": 7
+    },
+    {
+      "name": "Steven",
+      "surname": "Gabenn",
+      "company": {
+        "id": 2,
+        "name": "Microsoft",
+        "color": "#472db3"
+      },
+      "technology": "Java",
+      "id": 8
     }
   ],
   "companies": [
     {
       "id": 1,
       "name": "Winners.js",
+      "color": "#472db3"
+    },
+    {
+      "id": 2,
+      "name": "Microsoft",
+      "color": "#472db3"
+    },
+    {
+      "id": 3,
+      "name": "Facebook",
+      "color": "#472db3"
+    },
+    {
+      "id": 4,
+      "name": "Apple",
       "color": "#472db3"
     }
   ],
