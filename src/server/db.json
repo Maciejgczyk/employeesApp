@@ -87,6 +87,50 @@
       },
       "technology": "Java",
       "id": 8
+    },
+    {
+      "name": "Ella",
+      "surname": "Marcus",
+      "company": {
+        "id": 6,
+        "name": "Oracle",
+        "color": "#ff0026"
+      },
+      "technology": "Spring",
+      "id": 9
+    },
+    {
+      "name": "Andrew",
+      "surname": "What'son",
+      "company": {
+        "id": 7,
+        "name": "Intel",
+        "color": "#00b3ff"
+      },
+      "technology": "Laravel",
+      "id": 10
+    },
+    {
+      "name": "Boris",
+      "surname": "Newton",
+      "company": {
+        "id": 8,
+        "name": "Visa",
+        "color": "#ff179a"
+      },
+      "technology": "Django",
+      "id": 11
+    },
+    {
+      "name": "Grace",
+      "surname": "Miller",
+      "company": {
+        "id": 7,
+        "name": "Intel",
+        "color": "#00b3ff"
+      },
+      "technology": "Assembler",
+      "id": 12
     }
   ],
   "companies": [
@@ -109,6 +153,26 @@
       "id": 4,
       "name": "Apple",
       "color": "#472db3"
+    },
+    {
+      "id": 5,
+      "name": "Amazon",
+      "color": "#ff9100"
+    },
+    {
+      "id": 6,
+      "name": "Oracle",
+      "color": "#ff0026"
+    },
+    {
+      "id": 7,
+      "name": "Intel",
+      "color": "#00b3ff"
+    },
+    {
+      "id": 8,
+      "name": "Visa",
+      "color": "#ff179a"
     }
   ],
   "admin": {
