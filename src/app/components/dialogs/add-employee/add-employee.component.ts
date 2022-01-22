@@ -40,7 +40,8 @@ export class AddEmployeeComponent implements OnInit, OnDestroy {
       name: ['', Validators.required],
       surname: ['', Validators.required],
       company: ['', Validators.required],
-      technology: ''
+      technology: '',
+      info: ''
     })
   }
 

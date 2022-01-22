@@ -11,9 +11,13 @@
   &__form--fields {
     @include flex-spread;
     flex-wrap: wrap;
+  }
 
-    .mat-form-field {
-      width: 48%;
-    }
+  &__form--fields--input {
+    width: 48%;
+  }
+
+  &__form--fields--textarea {
+    width: 100%;
   }
 }

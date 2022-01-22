@@ -7,5 +7,6 @@ export interface IEmployee {
     name: string;
     color: string;
   };
-  technology: string;
+  technology?: string;
+  info?: string;
 }

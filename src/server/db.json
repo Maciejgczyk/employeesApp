@@ -131,6 +131,18 @@
       },
       "technology": "Assembler",
       "id": 12
+    },
+    {
+      "name": "Marcus",
+      "surname": "Zakinto",
+      "company": {
+        "id": 3,
+        "name": "Facebook",
+        "color": "#472db3"
+      },
+      "technology": "Idk",
+      "info": "Need to eat more",
+      "id": 13
     }
   ],
   "companies": [
