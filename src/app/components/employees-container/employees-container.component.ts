@@ -16,6 +16,11 @@ export class EmployeesContainerComponent implements OnInit, OnDestroy {
   constructor(private employeesService: EmployeesService) { }
 
   ngOnInit(): void {
+    this.getEmployees();
+    this.employeesService.getCreateeEmployeeAction().subscribe(() => this.getEmployees());
+  }
+
+  getEmployees() {
     this.employeesService.getEmployees()
       .pipe(
         takeUntil(this.destroyComponent$)

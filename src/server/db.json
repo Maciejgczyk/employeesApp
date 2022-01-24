@@ -143,6 +143,42 @@
       "technology": "Idk",
       "info": "Need to eat more",
       "id": 13
+    },
+    {
+      "name": "Paul",
+      "surname": "Pogba",
+      "company": {
+        "id": 3,
+        "name": "Facebook",
+        "color": "#472db3"
+      },
+      "technology": "",
+      "info": "",
+      "id": 14
+    },
+    {
+      "name": "Young",
+      "surname": "Pui",
+      "company": {
+        "id": 3,
+        "name": "Facebook",
+        "color": "#472db3"
+      },
+      "technology": "Pascal",
+      "info": "",
+      "id": 15
+    },
+    {
+      "name": "Matthew",
+      "surname": "Grigorcyk",
+      "company": {
+        "id": 5,
+        "name": "Amazon",
+        "color": "#ff9100"
+      },
+      "technology": "TypeScript",
+      "info": "",
+      "id": 16
     }
   ],
   "companies": [

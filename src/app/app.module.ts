@@ -12,6 +12,7 @@ import {MaterialModule} from "./shared/modules/material.module";
 import { AddEmployeeComponent } from './components/dialogs/add-employee/add-employee.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {ReactiveFormsModule} from "@angular/forms";
+import { CompaniesComponent } from './components/companies/companies.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import {ReactiveFormsModule} from "@angular/forms";
     EmployeesContainerComponent,
     EmployeeCardComponent,
     AddEmployeeComponent,
+    CompaniesComponent,
   ],
     imports: [
         BrowserModule,
