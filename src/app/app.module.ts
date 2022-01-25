@@ -13,6 +13,7 @@ import { AddEmployeeComponent } from './components/dialogs/add-employee/add-empl
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {ReactiveFormsModule} from "@angular/forms";
 import { CompaniesComponent } from './components/companies/companies.component';
+import {HeaderRoutingModule} from "./components/header/header-routing.module";
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { CompaniesComponent } from './components/companies/companies.component';
   ],
     imports: [
         BrowserModule,
+        HeaderRoutingModule,
         AppRoutingModule,
         HttpClientModule,
         MaterialModule,
