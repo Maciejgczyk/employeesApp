@@ -1,22 +1,22 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
-import {IEmployee} from "../interfaces/employee.model";
-import {Observable, Subject} from "rxjs";
+import { HttpClient } from '@angular/common/http';
+import { IEmployee } from '../interfaces/employee.model';
+import { Observable, Subject } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class EmployeesService {
-  private createEmployeeAction = new Subject<any>()
+  private createEmployeeAction = new Subject<any>();
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   sendCreateEmployeeAction(): void {
-    this.createEmployeeAction.next()
+    this.createEmployeeAction.next();
   }
 
   getCreateeEmployeeAction(): Observable<any> {
-    return this.createEmployeeAction.asObservable()
+    return this.createEmployeeAction.asObservable();
   }
 
   getEmployees(): Observable<IEmployee[]> {
@@ -24,6 +24,9 @@ export class EmployeesService {
   }
 
   createEmployee(employee: IEmployee) {
-    return this.http.post<IEmployee>('http://localhost:3000/employees', employee);
+    return this.http.post<IEmployee>(
+      'http://localhost:3000/employees',
+      employee
+    );
   }
 }
