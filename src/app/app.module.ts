@@ -14,6 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {ReactiveFormsModule} from "@angular/forms";
 import { CompaniesComponent } from './components/companies/companies.component';
 import {HeaderRoutingModule} from "./components/header/header-routing.module";
+import { AddCompanyComponent } from './components/companies/add-company/add-company.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import {HeaderRoutingModule} from "./components/header/header-routing.module";
     EmployeeCardComponent,
     AddEmployeeComponent,
     CompaniesComponent,
+    AddCompanyComponent,
   ],
     imports: [
         BrowserModule,

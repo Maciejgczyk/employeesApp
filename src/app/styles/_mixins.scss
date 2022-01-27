@@ -16,6 +16,12 @@
   justify-content: space-between;
 }
 
+@mixin flex-spread-center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 @mixin input-field {
   color: $white;
   background: transparent;

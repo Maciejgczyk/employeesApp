@@ -1,1 +1,21 @@
-Comapnies
+<app-add-company></app-add-company>
+<ng-container *ngFor="let company of allCompanies">
+  <div class="company">
+    <div class="company__info">
+      <span class="company__info--name">{{ company.name }}</span>
+      <div
+        [ngStyle]="{ background: company.color }"
+        class="company__info--color"
+      ></div>
+    </div>
+    <div class="company__actions">
+      <button mat-icon-button>
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button>
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+  </div>
+  <mat-divider></mat-divider>
+</ng-container>
