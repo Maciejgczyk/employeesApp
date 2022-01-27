@@ -8,5 +8,6 @@ export interface IEmployee {
     color: string;
   };
   technology?: string;
+  email?: string;
   info?: string;
 }

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { IEmployee } from '../interfaces/employee.model';
 import { Observable, Subject } from 'rxjs';
+import { share } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
@@ -9,7 +10,7 @@ import { Observable, Subject } from 'rxjs';
 export class EmployeesService {
   private createEmployeeAction = new Subject<any>();
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   sendCreateEmployeeAction(): void {
     this.createEmployeeAction.next();
