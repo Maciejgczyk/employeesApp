@@ -51,7 +51,7 @@ export class AddEmployeeComponent implements OnInit, OnDestroy {
     this.destroyComponent$.complete();
   }
 
-  createEmployee() {
+createEmployee() {
     if (this.employeeForm.valid) {
       this.employeesService
         .createEmployee(this.employeeForm.value)
