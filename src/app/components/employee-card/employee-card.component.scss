@@ -22,6 +22,10 @@
     color: $blue;
   }
 
+  &__email {
+    display: block;
+  }
+
   &__technology {
     padding: 4px 12px;
     border-radius: 4px;

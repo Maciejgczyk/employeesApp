@@ -1,5 +1,6 @@
 <div class="employee">
   <span class="employee__name"> {{ employee.name }} {{ employee.surname }}</span>
+  <span class="employee__email">{{ employee.email ? employee.email : 'No e-mail' }}</span>
   <div class="employee__company">
     <div
       [ngStyle]="{'background': employee.company.color}"

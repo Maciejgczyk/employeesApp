@@ -1,12 +1,12 @@
-import {Component, OnInit, Inject, OnDestroy} from '@angular/core';
-import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
-import {ICompany} from "../../../interfaces/company.model";
-import {CompaniesService} from "../../../services/companies.service";
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {EmployeesService} from "../../../services/employees.service";
-import {Subject} from "rxjs";
-import {takeUntil} from "rxjs/operators";
-import {SnackbarService} from "../../../services/snackbar.service";
+import { Component, OnInit, Inject, OnDestroy } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material/dialog";
+import { ICompany } from "../../../interfaces/company.model";
+import { CompaniesService } from "../../../services/companies.service";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { EmployeesService } from "../../../services/employees.service";
+import { Subject } from "rxjs";
+import { takeUntil } from "rxjs/operators";
+import { SnackbarService } from "../../../services/snackbar.service";
 
 @Component({
   selector: 'app-add-employee',
@@ -33,15 +33,16 @@ export class AddEmployeeComponent implements OnInit, OnDestroy {
         takeUntil(this.destroyComponent$)
       )
       .subscribe(
-      item => this.allCompanies = item
-    )
+        item => this.allCompanies = item
+      )
 
     this.employeeForm = this.fb.group({
-      name: ['', Validators.required],
-      surname: ['', Validators.required],
+      name: ['', [Validators.required, Validators.minLength(2)]],
+      surname: ['', [Validators.required, Validators.minLength(3)]],
       company: ['', Validators.required],
       technology: '',
-      info: ''
+      email: ['', Validators.email],
+      info: ['', Validators.maxLength(100)]
     })
   }
 
@@ -50,14 +51,15 @@ export class AddEmployeeComponent implements OnInit, OnDestroy {
     this.destroyComponent$.complete();
   }
 
-  createEmployee() {
-    if(this.employeeForm.valid) {
-      this.employeesService.createEmployee(this.employeeForm.value)
+createEmployee() {
+    if (this.employeeForm.valid) {
+      this.employeesService
+        .createEmployee(this.employeeForm.value)
         .subscribe(() => {
           this.employeesService.sendCreateEmployeeAction();
           this.snackbarService.openSnackbar('Created successfully');
           this.dialogRef.close();
-        })
+        });
     }
   }
 }
