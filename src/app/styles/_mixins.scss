@@ -16,15 +16,23 @@
   justify-content: space-between;
 }
 
-@mixin input-field {
-  color: $white;
+@mixin flex-spread-center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin input-field($color) {
+  color: $color;
+  font-size: 16px;
   background: transparent;
 
   border: none;
-  border-bottom: solid 1px $white;
+  border-bottom: solid 1px $color;
+  padding-bottom: 6px;
   outline: none;
 
   &::placeholder {
-    color: $white;
+    color: $color;
   }
 }

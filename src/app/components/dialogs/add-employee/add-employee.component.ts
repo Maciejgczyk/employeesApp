@@ -1,17 +1,17 @@
 import { Component, OnInit, Inject, OnDestroy } from '@angular/core';
-import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material/dialog";
-import { ICompany } from "../../../interfaces/company.model";
-import { CompaniesService } from "../../../services/companies.service";
-import { FormBuilder, FormGroup, Validators } from "@angular/forms";
-import { EmployeesService } from "../../../services/employees.service";
-import { Subject } from "rxjs";
-import { takeUntil } from "rxjs/operators";
-import { SnackbarService } from "../../../services/snackbar.service";
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { ICompany } from '../../../interfaces/company.model';
+import { CompaniesService } from '../../../services/companies.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { EmployeesService } from '../../../services/employees.service';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
+import { SnackbarService } from '../../../services/snackbar.service';
 
 @Component({
   selector: 'app-add-employee',
   templateUrl: './add-employee.component.html',
-  styleUrls: ['./add-employee.component.scss']
+  styleUrls: ['./add-employee.component.scss'],
 })
 export class AddEmployeeComponent implements OnInit, OnDestroy {
   destroyComponent$: Subject<boolean> = new Subject<boolean>();
@@ -24,17 +24,14 @@ export class AddEmployeeComponent implements OnInit, OnDestroy {
     private fb: FormBuilder,
     private companiesService: CompaniesService,
     private employeesService: EmployeesService,
-    private snackbarService: SnackbarService,
-  ) { }
+    private snackbarService: SnackbarService
+  ) {}
 
   ngOnInit(): void {
-    this.companiesService.getCompanies()
-      .pipe(
-        takeUntil(this.destroyComponent$)
-      )
-      .subscribe(
-        item => this.allCompanies = item
-      )
+    this.companiesService
+      .getCompanies()
+      .pipe(takeUntil(this.destroyComponent$))
+      .subscribe((item) => (this.allCompanies = item));
 
     this.employeeForm = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(2)]],
@@ -42,8 +39,8 @@ export class AddEmployeeComponent implements OnInit, OnDestroy {
       company: ['', Validators.required],
       technology: '',
       email: ['', Validators.email],
-      info: ['', Validators.maxLength(100)]
-    })
+      info: ['', Validators.maxLength(100)],
+    });
   }
 
   ngOnDestroy(): void {
@@ -51,7 +48,7 @@ export class AddEmployeeComponent implements OnInit, OnDestroy {
     this.destroyComponent$.complete();
   }
 
-createEmployee() {
+  createEmployee(): void {
     if (this.employeeForm.valid) {
       this.employeesService
         .createEmployee(this.employeeForm.value)

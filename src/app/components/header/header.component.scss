@@ -9,12 +9,8 @@
   padding: 16px;
 
   &__input {
-    @include input-field;
+    @include input-field($white);
     width: 262px;
-
-    &::placeholder {
-      color: $white;
-    }
   }
 }
 

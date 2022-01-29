@@ -3,17 +3,19 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MainComponent } from "./components/main/main.component";
+import { MainComponent } from './components/main/main.component';
 import { HeaderComponent } from './components/header/header.component';
 import { EmployeesContainerComponent } from './components/employees-container/employees-container.component';
 import { EmployeeCardComponent } from './components/employee-card/employee-card.component';
-import { HttpClientModule } from "@angular/common/http";
-import {MaterialModule} from "./shared/modules/material.module";
+import { HttpClientModule } from '@angular/common/http';
+import { MaterialModule } from './shared/modules/material.module';
 import { AddEmployeeComponent } from './components/dialogs/add-employee/add-employee.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {ReactiveFormsModule} from "@angular/forms";
+import { ReactiveFormsModule } from '@angular/forms';
 import { CompaniesComponent } from './components/companies/companies.component';
-import {HeaderRoutingModule} from "./components/header/header-routing.module";
+import { HeaderRoutingModule } from './components/header/header-routing.module';
+import { AddCompanyComponent } from './components/companies/add-company/add-company.component';
+import { ColorPickerModule } from 'ngx-color-picker';
 
 @NgModule({
   declarations: [
@@ -24,19 +26,19 @@ import {HeaderRoutingModule} from "./components/header/header-routing.module";
     EmployeeCardComponent,
     AddEmployeeComponent,
     CompaniesComponent,
+    AddCompanyComponent,
   ],
-    imports: [
-        BrowserModule,
-        HeaderRoutingModule,
-        AppRoutingModule,
-        HttpClientModule,
-        MaterialModule,
-        BrowserAnimationsModule,
-        ReactiveFormsModule
-    ],
-  providers: [
+  imports: [
+    BrowserModule,
+    HeaderRoutingModule,
+    AppRoutingModule,
     HttpClientModule,
+    MaterialModule,
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    ColorPickerModule,
   ],
-  bootstrap: [AppComponent]
+  providers: [HttpClientModule],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
