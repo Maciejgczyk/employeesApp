@@ -22,7 +22,7 @@ export class EmployeesContainerComponent implements OnInit, OnDestroy {
       .subscribe(() => this.getEmployees());
   }
 
-  getEmployees() {
+  getEmployees(): void {
     this.employeesService
       .getEmployees()
       .pipe(takeUntil(this.destroyComponent$))

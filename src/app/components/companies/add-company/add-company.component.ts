@@ -14,7 +14,7 @@ export class AddCompanyComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private companiesService: CompaniesService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.companyForm = this.fb.group({
@@ -33,6 +33,7 @@ export class AddCompanyComponent implements OnInit {
         .createCompany(this.companyForm.value)
         .subscribe(() => {
           this.companyForm.reset();
+          this.companiesService.sendCompanyAction();
         });
     }
   }

@@ -13,12 +13,20 @@ export class CompaniesComponent implements OnInit {
   constructor(private companiesService: CompaniesService) { }
 
   ngOnInit(): void {
+    this.getCompanies();
+    this.companiesService
+      .reloadCompanies()
+      .subscribe(() => this.getCompanies())
+  }
+
+  getCompanies(): void {
     this.companiesService
       .getCompanies()
       .subscribe((response) => (this.allCompanies = response));
   }
 
   deleteCompany(companyId: number): void {
-    this.companiesService.deleteCompany(companyId).subscribe();
+    this.companiesService.deleteCompany(companyId)
+      .subscribe(() => this.companiesService.sendCompanyAction());
   }
 }
