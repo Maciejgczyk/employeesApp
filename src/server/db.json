@@ -271,6 +271,11 @@
       "name": "Damtom",
       "color": "#1599e9",
       "id": 10
+    },
+    {
+      "name": "PayPal",
+      "color": "#0093ff",
+      "id": 11
     }
   ],
   "admin": {
