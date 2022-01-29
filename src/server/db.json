@@ -56,17 +56,6 @@
       "id": 5
     },
     {
-      "name": "Royo",
-      "surname": "Washington",
-      "company": {
-        "id": 4,
-        "name": "Apple",
-        "color": "#472db3"
-      },
-      "technology": "Python",
-      "id": 6
-    },
-    {
       "name": "Cobolin",
       "surname": "Macintosh",
       "company": {
