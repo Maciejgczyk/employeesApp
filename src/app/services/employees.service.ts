@@ -7,16 +7,16 @@ import { Observable, Subject } from 'rxjs';
   providedIn: 'root',
 })
 export class EmployeesService {
-  private createEmployeeAction = new Subject<any>();
+  private employeeActions = new Subject<any>();
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
-  sendCreateEmployeeAction(): void {
-    this.createEmployeeAction.next();
+  sendEmployeeAction(): void {
+    this.employeeActions.next();
   }
 
-  getCreateeEmployeeAction(): Observable<any> {
-    return this.createEmployeeAction.asObservable();
+  reloadEmployees(): Observable<any> {
+    return this.employeeActions.asObservable();
   }
 
   getEmployees(): Observable<IEmployee[]> {
@@ -27,6 +27,12 @@ export class EmployeesService {
     return this.http.post<IEmployee>(
       'http://localhost:3000/employees',
       employee
+    );
+  }
+
+  deleteEmployee(employeeId: number) {
+    return this.http.delete<IEmployee>(
+      `http://localhost:3000/employees/${employeeId}`
     );
   }
 }

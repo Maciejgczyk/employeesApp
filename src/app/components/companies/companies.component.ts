@@ -10,7 +10,7 @@ import { ICompany } from '../../interfaces/company.model';
 export class CompaniesComponent implements OnInit {
   allCompanies: ICompany[];
 
-  constructor(private companiesService: CompaniesService) {}
+  constructor(private companiesService: CompaniesService) { }
 
   ngOnInit(): void {
     this.companiesService

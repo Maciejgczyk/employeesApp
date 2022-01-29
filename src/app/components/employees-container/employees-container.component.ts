@@ -13,12 +13,12 @@ export class EmployeesContainerComponent implements OnInit, OnDestroy {
   destroyComponent$: Subject<boolean> = new Subject<boolean>();
   allEmployees: IEmployee[];
 
-  constructor(private employeesService: EmployeesService) {}
+  constructor(private employeesService: EmployeesService) { }
 
   ngOnInit(): void {
     this.getEmployees();
     this.employeesService
-      .getCreateeEmployeeAction()
+      .reloadEmployees()
       .subscribe(() => this.getEmployees());
   }
 
@@ -26,7 +26,7 @@ export class EmployeesContainerComponent implements OnInit, OnDestroy {
     this.employeesService
       .getEmployees()
       .pipe(takeUntil(this.destroyComponent$))
-      .subscribe((items) => (this.allEmployees = items));
+      .subscribe(items => this.allEmployees = items);
   }
 
   ngOnDestroy(): void {

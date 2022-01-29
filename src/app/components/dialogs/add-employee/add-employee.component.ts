@@ -25,7 +25,7 @@ export class AddEmployeeComponent implements OnInit, OnDestroy {
     private companiesService: CompaniesService,
     private employeesService: EmployeesService,
     private snackbarService: SnackbarService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.companiesService
@@ -53,7 +53,7 @@ export class AddEmployeeComponent implements OnInit, OnDestroy {
       this.employeesService
         .createEmployee(this.employeeForm.value)
         .subscribe(() => {
-          this.employeesService.sendCreateEmployeeAction();
+          this.employeesService.sendEmployeeAction();
           this.snackbarService.openSnackbar('Created successfully');
           this.dialogRef.close();
         });

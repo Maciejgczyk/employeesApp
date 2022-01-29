@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class CompaniesService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getCompanies(): Observable<ICompany[]> {
     return this.http.get<ICompany[]>('http://localhost:3000/companies');
