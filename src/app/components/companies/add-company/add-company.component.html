@@ -1,1 +1,14 @@
-<p>add-company works!</p>
+<form [formGroup]="companyForm" (ngSubmit)="createCompany()" class="form">
+  <div class="form__fields">
+    <input formControlName="name" placeholder="Company name" class="form__fields--name"/>
+    <div class="form__fields--color">
+      <input
+        [(colorPicker)]="companyColor"
+        [style.background]="companyColor"
+        (colorPickerChange)="formColorChange($event)"
+      />
+    </div>
+  </div>
+  <button type="submit" mat-flat-button color="primary">Create company</button>
+</form>
+<mat-divider></mat-divider>

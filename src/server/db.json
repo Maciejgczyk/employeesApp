@@ -179,19 +179,59 @@
       "technology": "TypeScript",
       "info": "",
       "id": 16
+    },
+    {
+      "name": "Mark",
+      "surname": "Jak",
+      "company": {
+        "id": 2,
+        "name": "Microsoft",
+        "color": "#472db3"
+      },
+      "technology": "React.js",
+      "info": "Add personal informations",
+      "id": 17
+    },
+    {
+      "name": "John",
+      "surname": "Paulon",
+      "company": {
+        "id": 3,
+        "name": "Facebook",
+        "color": "#472db3"
+      },
+      "technology": "Linkkk",
+      "info": "",
+      "id": 18
+    },
+    {
+      "name": "Marcus",
+      "surname": "Macintosh",
+      "company": {
+        "id": 4,
+        "name": "Apple",
+        "color": "#472db3"
+      },
+      "technology": "Swift",
+      "email": "marc@app.com",
+      "info": "",
+      "id": 19
+    },
+    {
+      "name": "Makkkk",
+      "surname": "Innsc",
+      "company": {
+        "id": 2,
+        "name": "Microsoft",
+        "color": "#472db3"
+      },
+      "technology": "NooAsc",
+      "email": "dc@o2.pl",
+      "info": "",
+      "id": 20
     }
   ],
   "companies": [
-    {
-      "id": 1,
-      "name": "Winners.js",
-      "color": "#472db3"
-    },
-    {
-      "id": 2,
-      "name": "Microsoft",
-      "color": "#472db3"
-    },
     {
       "id": 3,
       "name": "Facebook",
@@ -221,6 +261,16 @@
       "id": 8,
       "name": "Visa",
       "color": "#ff179a"
+    },
+    {
+      "name": "Allegro",
+      "color": "#ff7700",
+      "id": 9
+    },
+    {
+      "name": "Damtom",
+      "color": "#1599e9",
+      "id": 10
     }
   ],
   "admin": {

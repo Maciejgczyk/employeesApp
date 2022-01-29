@@ -1,0 +1,40 @@
+@import 'src/app/styles/_variables';
+@import 'src/app/styles/_mixins';
+
+:host {
+  display: block;
+  margin-bottom: 24px;
+}
+
+.form {
+  @include flex-spread-center;
+  padding: 24px 8px;
+
+  &__fields {
+    @include flex-spread-center;
+    width: 444px;
+  }
+
+  &__fields--name {
+    @include input-field($blue);
+  }
+
+  &__fields--color {
+    @include flex-center-center;
+
+    position: relative;
+    padding: 6px;
+
+    border-radius: 6px;
+    border: 1px solid $blue;
+
+    input {
+      width: 24px;
+      height: 24px;
+
+      outline: none;
+      border: none;
+      border-radius: 6px;
+    }
+  }
+}

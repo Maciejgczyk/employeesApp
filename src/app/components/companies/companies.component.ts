@@ -17,4 +17,8 @@ export class CompaniesComponent implements OnInit {
       .getCompanies()
       .subscribe((response) => (this.allCompanies = response));
   }
+
+  deleteCompany(companyId: number): void {
+    this.companiesService.deleteCompany(companyId).subscribe();
+  }
 }

@@ -22,15 +22,16 @@
   align-items: center;
 }
 
-@mixin input-field {
-  color: $white;
+@mixin input-field($color) {
+  color: $color;
+  font-size: 16px;
   background: transparent;
 
   border: none;
-  border-bottom: solid 1px $white;
+  border-bottom: solid 1px $color;
   outline: none;
 
   &::placeholder {
-    color: $white;
+    color: $color;
   }
 }
