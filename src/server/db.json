@@ -180,66 +180,13 @@
       "technology": "React.js",
       "info": "Add personal informations",
       "id": 17
-    },
-    {
-      "name": "John",
-      "surname": "Paulon",
-      "company": {
-        "id": 3,
-        "name": "Facebook",
-        "color": "#472db3"
-      },
-      "technology": "Linkkk",
-      "info": "",
-      "id": 18
-    },
-    {
-      "name": "Marcus",
-      "surname": "Macintosh",
-      "company": {
-        "id": 4,
-        "name": "Apple",
-        "color": "#472db3"
-      },
-      "technology": "Swift",
-      "email": "marc@app.com",
-      "info": "",
-      "id": 19
-    },
-    {
-      "name": "Makkkk",
-      "surname": "Innsc",
-      "company": {
-        "id": 2,
-        "name": "Microsoft",
-        "color": "#472db3"
-      },
-      "technology": "NooAsc",
-      "email": "dc@o2.pl",
-      "info": "",
-      "id": 20
     }
   ],
   "companies": [
     {
-      "id": 3,
-      "name": "Facebook",
-      "color": "#472db3"
-    },
-    {
       "id": 4,
       "name": "Apple",
       "color": "#472db3"
-    },
-    {
-      "id": 5,
-      "name": "Amazon",
-      "color": "#ff9100"
-    },
-    {
-      "id": 6,
-      "name": "Oracle",
-      "color": "#ff0026"
     },
     {
       "id": 7,
@@ -265,6 +212,11 @@
       "name": "PayPal",
       "color": "#0093ff",
       "id": 11
+    },
+    {
+      "name": "Koding.pl",
+      "color": "#fb00ff",
+      "id": 12
     }
   ],
   "admin": {

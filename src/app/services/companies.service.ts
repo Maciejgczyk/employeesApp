@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ICompany } from '../interfaces/company.model';
 import { Observable, Subject } from 'rxjs';
+import { map } from "rxjs/operators";
 
 @Injectable({
   providedIn: 'root',
@@ -21,6 +22,12 @@ export class CompaniesService {
 
   getCompanies(): Observable<ICompany[]> {
     return this.http.get<ICompany[]>('http://localhost:3000/companies');
+  }
+
+  searchCompanies(value: string = ''): Observable<ICompany[]> {
+    return this.getCompanies().pipe(
+      map(companies => companies.filter(el => el.name.toLowerCase().includes(value)))
+    )
   }
 
   createCompany(company: ICompany): Observable<ICompany> {

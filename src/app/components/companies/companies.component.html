@@ -1,4 +1,5 @@
 <app-add-company></app-add-company>
+<input placeholder="Search by company name" (input)="searchCompanies($event.target.value)">
 <ng-container *ngFor="let company of allCompanies">
   <div class="company">
     <div class="company__info">

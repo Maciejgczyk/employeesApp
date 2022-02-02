@@ -16,7 +16,7 @@ export class CompaniesComponent implements OnInit {
     this.getCompanies();
     this.companiesService
       .reloadCompanies()
-      .subscribe(() => this.getCompanies())
+      .subscribe(() => this.getCompanies());
   }
 
   getCompanies(): void {
@@ -28,5 +28,10 @@ export class CompaniesComponent implements OnInit {
   deleteCompany(companyId: number): void {
     this.companiesService.deleteCompany(companyId)
       .subscribe(() => this.companiesService.sendCompanyAction());
+  }
+
+  searchCompanies(value): void {
+    this.companiesService.searchCompanies(value.toLowerCase())
+      .subscribe(el => this.allCompanies = el);
   }
 }
