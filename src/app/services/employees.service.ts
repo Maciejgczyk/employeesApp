@@ -44,11 +44,11 @@ export class EmployeesService {
   searchEmployees(value: string = ''): Observable<IEmployee[]> {
     return this.getEmployees().pipe(
       map((employees) =>
-        employees.filter((employee) => {
-          return `${employee.name} ${employee.surname}`
+        employees.filter((employee) =>
+          `${employee.name} ${employee.surname}`
             .toLowerCase()
-            .includes(value.toLowerCase());
-        })
+            .includes(value.toLowerCase())
+        )
       )
     );
   }
