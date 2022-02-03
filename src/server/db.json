@@ -1,17 +1,6 @@
 {
   "employees": [
     {
-      "name": "Mark",
-      "surname": "Zucc",
-      "company": {
-        "id": 1,
-        "name": "Winners.js",
-        "color": "#472db3"
-      },
-      "technology": "React",
-      "id": 1
-    },
-    {
       "name": "Mohamed",
       "surname": "Salah",
       "company": {
@@ -164,9 +153,14 @@
   ],
   "companies": [
     {
-      "name": "Koding.pl",
-      "color": "#fb00ff",
-      "id": 12
+      "name": "Apple",
+      "color": "#b58a3f",
+      "id": 1
+    },
+    {
+      "name": "Amazon",
+      "color": "#000000",
+      "id": 2
     }
   ],
   "admin": {

@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { IEmployee } from 'src/app/interfaces/employee.model';
 import { EmployeesService } from 'src/app/services/employees.service';
+import { ConfirmationComponent } from '../dialogs/confirmation/confirmation.component';
 
 @Component({
   selector: 'app-employee-card',
@@ -10,14 +12,24 @@ import { EmployeesService } from 'src/app/services/employees.service';
 export class EmployeeCardComponent implements OnInit {
   @Input() employee: IEmployee
 
-  constructor(private employeesService: EmployeesService) { }
+  constructor(private employeesService: EmployeesService, private dialog: MatDialog) { }
 
   ngOnInit(): void { }
 
   deleteEmployee() {
-    this.employeesService.deleteEmployee(this.employee.id)
-      .subscribe(() => {
-        this.employeesService.reloadEmployees();
-      });
+    const confirmDialog = this.dialog.open(ConfirmationComponent, {
+      data: {
+        title: 'Remove Employee',
+        message: `Are you sure, you want to remove an employee: ${this.employee.name} ${this.employee.surname}?`
+      }
+    })
+    confirmDialog.afterClosed().subscribe(result => {
+      if (result === true) {
+        this.employeesService.deleteEmployee(this.employee.id)
+          .subscribe(() => {
+            this.employeesService.reloadEmployees();
+          });
+      }
+    });
   }
 }
