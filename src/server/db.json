@@ -136,31 +136,28 @@
       "technology": "React.js",
       "info": "Add personal informations",
       "id": 17
-    },
-    {
-      "name": "Mark",
-      "surname": "Zuckenbagen",
-      "company": {
-        "id": 7,
-        "name": "Intel",
-        "color": "#00b3ff"
-      },
-      "technology": "Angular",
-      "email": "mark@op.eu",
-      "info": "",
-      "id": 18
     }
   ],
   "companies": [
     {
-      "name": "Apple",
-      "color": "#b58a3f",
-      "id": 1
-    },
-    {
       "name": "Amazon",
       "color": "#000000",
       "id": 2
+    },
+    {
+      "name": "Koding.pl",
+      "color": "#ffe200",
+      "id": 3
+    },
+    {
+      "name": "MerixStudio",
+      "color": "#e69b00",
+      "id": 4
+    },
+    {
+      "name": "Allegro",
+      "color": "#fff800",
+      "id": 5
     }
   ],
   "admin": {

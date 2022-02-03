@@ -1,6 +1,6 @@
 <app-add-company></app-add-company>
 <input placeholder="Look for.." class="input-field" (input)="searchCompanies($event.target.value)">
-<ng-container *ngFor="let company of allCompanies">
+<ng-container *ngFor="let company of allCompanies$ | async">
   <div class="company">
     <div class="company__info">
       <span class="company__info--name">{{ company.name }}</span>

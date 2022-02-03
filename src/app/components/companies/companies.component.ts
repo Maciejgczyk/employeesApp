@@ -3,6 +3,7 @@ import { CompaniesService } from '../../services/companies.service';
 import { ICompany } from '../../interfaces/company.model';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmationComponent } from '../dialogs/confirmation/confirmation.component';
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-companies',
@@ -10,7 +11,7 @@ import { ConfirmationComponent } from '../dialogs/confirmation/confirmation.comp
   styleUrls: ['./companies.component.scss'],
 })
 export class CompaniesComponent implements OnInit {
-  allCompanies: ICompany[];
+  allCompanies$: Observable<ICompany[]>;
 
   constructor(private companiesService: CompaniesService, private dialog: MatDialog) { }
 
@@ -21,9 +22,7 @@ export class CompaniesComponent implements OnInit {
   }
 
   getCompanies(): void {
-    this.companiesService
-      .getCompanies()
-      .subscribe((response) => (this.allCompanies = response));
+    this.allCompanies$ = this.companiesService.getCompanies();
   }
 
   deleteCompany(companyId: number, companyName: string): void {
@@ -42,7 +41,6 @@ export class CompaniesComponent implements OnInit {
   }
 
   searchCompanies(value): void {
-    this.companiesService.searchCompanies(value.toLowerCase())
-      .subscribe(el => this.allCompanies = el);
+    this.allCompanies$ = this.companiesService.searchCompanies(value.toLowerCase());
   }
 }
