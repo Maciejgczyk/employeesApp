@@ -1,17 +1,6 @@
 {
   "employees": [
     {
-      "name": "Mohamed",
-      "surname": "Salah",
-      "company": {
-        "id": 2,
-        "name": "Microsoft",
-        "color": "#472db3"
-      },
-      "technology": "Node.js",
-      "id": 5
-    },
-    {
       "name": "Cobolin",
       "surname": "Macintosh",
       "company": {
@@ -90,18 +79,6 @@
       "id": 13
     },
     {
-      "name": "Paul",
-      "surname": "Pogba",
-      "company": {
-        "id": 3,
-        "name": "Facebook",
-        "color": "#472db3"
-      },
-      "technology": "",
-      "info": "",
-      "id": 14
-    },
-    {
       "name": "Young",
       "surname": "Pui",
       "company": {
@@ -112,18 +89,6 @@
       "technology": "Pascal",
       "info": "",
       "id": 15
-    },
-    {
-      "name": "Matthew",
-      "surname": "Grigorcyk",
-      "company": {
-        "id": 5,
-        "name": "Amazon",
-        "color": "#ff9100"
-      },
-      "technology": "TypeScript",
-      "info": "",
-      "id": 16
     },
     {
       "name": "Mark",
