@@ -158,6 +158,16 @@
       "name": "Allegro",
       "color": "#fff800",
       "id": 5
+    },
+    {
+      "name": "Amigo",
+      "color": "#aeb4d8",
+      "id": 6
+    },
+    {
+      "name": "DamTom",
+      "color": "#3cba7a",
+      "id": 7
     }
   ],
   "admin": {
