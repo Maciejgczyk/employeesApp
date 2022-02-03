@@ -3,11 +3,12 @@
 
 .company {
   @include flex-spread-center;
-  padding: 16px 8px;
+  padding: 16px 0;
 
   &__info {
     @include flex-spread-center;
     width: 436px;
+    padding: 0 8px;
   }
 
   &__info--name {
