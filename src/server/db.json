@@ -140,34 +140,24 @@
   ],
   "companies": [
     {
-      "name": "Amazon",
-      "color": "#000000",
-      "id": 2
-    },
-    {
-      "name": "Koding.pl",
-      "color": "#ffe200",
-      "id": 3
-    },
-    {
       "name": "MerixStudio",
-      "color": "#e69b00",
+      "color": "#ffb927",
       "id": 4
     },
     {
       "name": "Allegro",
-      "color": "#fff800",
+      "color": "#ffe200",
       "id": 5
-    },
-    {
-      "name": "Amigo",
-      "color": "#aeb4d8",
-      "id": 6
     },
     {
       "name": "DamTom",
       "color": "#3cba7a",
       "id": 7
+    },
+    {
+      "name": "Netguru",
+      "color": "#16f926",
+      "id": 8
     }
   ],
   "admin": {

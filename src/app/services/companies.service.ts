@@ -31,6 +31,10 @@ export class CompaniesService {
     return this.http.post<ICompany>('http://localhost:3000/companies', company);
   }
 
+  saveCompany(companyId: number, company: ICompany) {
+    return this.http.put<ICompany>(`http://localhost:3000/companies/${companyId}`, company)
+  }
+
   deleteCompany(companyId: number): Observable<ICompany> {
     return this.http.delete<ICompany>(
       `http://localhost:3000/companies/${companyId}`

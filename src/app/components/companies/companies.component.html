@@ -6,6 +6,7 @@
       *ngIf="editedCompanyId === company.id; else companyInfo"
       [editedCompany]="company"
       [actionName]="'Save changes'"
+      (onSave)="editedCompanyId = null"
     ></app-add-company>
     <ng-template #companyInfo>
       <div class="company__info">

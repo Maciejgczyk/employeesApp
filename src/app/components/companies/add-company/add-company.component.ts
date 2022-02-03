@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CompaniesService } from '../../../services/companies.service';
 import { ICompany } from '../../../interfaces/company.model';
@@ -11,6 +11,8 @@ import { ICompany } from '../../../interfaces/company.model';
 export class AddCompanyComponent implements OnInit {
   @Input() editedCompany: ICompany;
   @Input() actionName: string;
+
+  @Output() onSave = new EventEmitter();
 
   companyForm: FormGroup;
   companyColor = '#3f51b5';
@@ -27,8 +29,11 @@ export class AddCompanyComponent implements OnInit {
     });
 
     if (this.editedCompany) {
-      this.companyForm.get('name').setValue(this.editedCompany.name);
       this.companyColor = this.editedCompany.color;
+      this.companyForm.patchValue({
+        name: this.editedCompany.name,
+        color: this.editedCompany.color
+      });
     }
   }
 
@@ -47,7 +52,12 @@ export class AddCompanyComponent implements OnInit {
             this.companiesService.reloadCompanies();
           });
       } else {
-        console.log('Save changes')
+        this.companiesService
+          .saveCompany(this.editedCompany.id, this.companyForm.value)
+          .subscribe(() => {
+            this.onSave.emit();
+            this.companiesService.reloadCompanies();
+          });
       }
     }
   }
