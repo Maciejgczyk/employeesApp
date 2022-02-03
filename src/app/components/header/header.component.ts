@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from "@angular/material/dialog";
+import { EmployeesService } from 'src/app/services/employees.service';
 import { AddEmployeeComponent } from '../dialogs/add-employee/add-employee.component';
 
 @Component({
@@ -9,7 +10,7 @@ import { AddEmployeeComponent } from '../dialogs/add-employee/add-employee.compo
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private dialog: MatDialog) { }
+  constructor(private dialog: MatDialog, private employeesService: EmployeesService) { }
 
   ngOnInit(): void { }
 
@@ -18,7 +19,7 @@ export class HeaderComponent implements OnInit {
   }
 
   searchValue(searchValue: string) {
-    console.log(searchValue)
+    this.employeesService.sendSearchValue(searchValue);
   }
 
 }

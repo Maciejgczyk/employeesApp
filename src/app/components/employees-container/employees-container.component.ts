@@ -20,6 +20,10 @@ export class EmployeesContainerComponent implements OnInit, OnDestroy {
     this.employeesService
       .reloadEmployees()
       .subscribe(() => this.getEmployees());
+
+    this.employeesService.searchValue$
+      .subscribe(value => this.employeesService.searchEmployees(value)
+        .subscribe(el => this.allEmployees = el));
   }
 
   getEmployees(): void {
