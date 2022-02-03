@@ -16,6 +16,7 @@ import { CompaniesComponent } from './components/companies/companies.component';
 import { HeaderRoutingModule } from './components/header/header-routing.module';
 import { AddCompanyComponent } from './components/companies/add-company/add-company.component';
 import { ColorPickerModule } from 'ngx-color-picker';
+import { ConfirmationComponent } from './components/dialogs/confirmation/confirmation.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { ColorPickerModule } from 'ngx-color-picker';
     AddEmployeeComponent,
     CompaniesComponent,
     AddCompanyComponent,
+    ConfirmationComponent,
   ],
   imports: [
     BrowserModule,

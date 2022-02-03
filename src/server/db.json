@@ -12,28 +12,6 @@
       "id": 1
     },
     {
-      "name": "Marcus",
-      "surname": "Zaking",
-      "company": {
-        "id": 3,
-        "name": "Facebook",
-        "color": "#472db3"
-      },
-      "technology": "Angular",
-      "id": 3
-    },
-    {
-      "name": "Matthew",
-      "surname": "Kentocky",
-      "company": {
-        "id": 4,
-        "name": "Apple",
-        "color": "#472db3"
-      },
-      "technology": "React.js",
-      "id": 4
-    },
-    {
       "name": "Mohamed",
       "surname": "Salah",
       "company": {
@@ -185,36 +163,6 @@
     }
   ],
   "companies": [
-    {
-      "id": 4,
-      "name": "Apple",
-      "color": "#472db3"
-    },
-    {
-      "id": 7,
-      "name": "Intel",
-      "color": "#00b3ff"
-    },
-    {
-      "id": 8,
-      "name": "Visa",
-      "color": "#ff179a"
-    },
-    {
-      "name": "Allegro",
-      "color": "#ff7700",
-      "id": 9
-    },
-    {
-      "name": "Damtom",
-      "color": "#1599e9",
-      "id": 10
-    },
-    {
-      "name": "PayPal",
-      "color": "#0093ff",
-      "id": 11
-    },
     {
       "name": "Koding.pl",
       "color": "#fb00ff",
