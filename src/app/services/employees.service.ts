@@ -11,10 +11,10 @@ export class EmployeesService {
   private employeeActions = new Subject<any>();
   private searchEmployeeValue = new Subject<string>();
 
-  public reloadEmployees$ = this.employeeActions.asObservable()
+  public reloadEmployees$ = this.employeeActions.asObservable();
   public searchValue$ = this.searchEmployeeValue.asObservable();
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   sendEmployeeAction(): void {
     this.employeeActions.next();
@@ -42,9 +42,14 @@ export class EmployeesService {
   }
 
   searchEmployees(value: string = ''): Observable<IEmployee[]> {
-    return this.getEmployees()
-      .pipe(
-        map(employee => employee.filter(el => el.name.toLowerCase().includes(value.toLowerCase())))
+    return this.getEmployees().pipe(
+      map((employees) =>
+        employees.filter((employee) => {
+          return `${employee.name} ${employee.surname}`
+            .toLowerCase()
+            .includes(value.toLowerCase());
+        })
       )
+    );
   }
 }
