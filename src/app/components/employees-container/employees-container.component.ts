@@ -18,8 +18,7 @@ export class EmployeesContainerComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.getEmployees();
     this.employeesService
-      .reloadEmployees()
-      .subscribe(() => this.getEmployees());
+      .reloadEmployees$.subscribe(() => this.getEmployees());
 
     this.employeesService.searchValue$
       .subscribe(value => this.employeesService.searchEmployees(value)

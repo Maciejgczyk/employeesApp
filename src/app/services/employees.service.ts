@@ -10,6 +10,8 @@ import { map } from 'rxjs/operators';
 export class EmployeesService {
   private employeeActions = new Subject<any>();
   private searchEmployeeValue = new Subject<string>();
+
+  public reloadEmployees$ = this.employeeActions.asObservable()
   public searchValue$ = this.searchEmployeeValue.asObservable();
 
   constructor(private http: HttpClient) { }
@@ -18,8 +20,8 @@ export class EmployeesService {
     this.employeeActions.next();
   }
 
-  reloadEmployees(): Observable<any> {
-    return this.employeeActions.asObservable();
+  sendSearchValue(value: string): void {
+    this.searchEmployeeValue.next(value);
   }
 
   getEmployees(): Observable<IEmployee[]> {
@@ -37,10 +39,6 @@ export class EmployeesService {
     return this.http.delete<IEmployee>(
       `http://localhost:3000/employees/${employeeId}`
     );
-  }
-
-  sendSearchValue(value: string): void {
-    this.searchEmployeeValue.next(value);
   }
 
   searchEmployees(value: string = ''): Observable<IEmployee[]> {

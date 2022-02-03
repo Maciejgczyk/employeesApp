@@ -9,15 +9,12 @@ import { map } from "rxjs/operators";
 })
 export class CompaniesService {
   private companyActions = new Subject<any>();
+  public reloadCompanies$ = this.companyActions.asObservable();
 
   constructor(private http: HttpClient) { }
 
   sendCompanyAction(): void {
     this.companyActions.next();
-  }
-
-  reloadCompanies(): Observable<any> {
-    return this.companyActions.asObservable();
   }
 
   getCompanies(): Observable<ICompany[]> {
