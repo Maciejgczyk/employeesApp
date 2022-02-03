@@ -1,106 +1,121 @@
 {
   "employees": [
     {
-      "name": "Cobolin",
-      "surname": "Macintosh",
+      "name": "Bloody",
+      "surname": "Elyth",
       "company": {
-        "id": 2,
-        "name": "Microsoft",
-        "color": "#472db3"
+        "name": "Netguru",
+        "color": "#16f926",
+        "id": 8
       },
-      "technology": "Assembler",
+      "technology": "Django",
+      "email": "Imperfectapp@gmail.com",
+      "info": "Need to send some papers",
+      "id": 1
+    },
+    {
+      "name": "Demon",
+      "surname": "Joric",
+      "company": {
+        "name": "DamTom",
+        "color": "#3cba7a",
+        "id": 7
+      },
+      "technology": "Pascal",
+      "email": "Concernedapp@gmail.com",
+      "info": "",
+      "id": 2
+    },
+    {
+      "name": "Dark",
+      "surname": "Oloend",
+      "company": {
+        "name": "Allegro",
+        "color": "#ffe200",
+        "id": 5
+      },
+      "technology": "Javascript",
+      "email": "Adjoiningapp@gmail.com",
+      "info": "",
+      "id": 3
+    },
+    {
+      "name": "Ahmad",
+      "surname": "Baino",
+      "company": {
+        "name": "Allegro",
+        "color": "#ffe200",
+        "id": 5
+      },
+      "technology": "",
+      "email": "",
+      "info": "",
+      "id": 4
+    },
+    {
+      "name": "Giselle",
+      "surname": "Rataj",
+      "company": {
+        "name": "Allegro",
+        "color": "#ffe200",
+        "id": 5
+      },
+      "technology": "Cobol",
+      "email": "",
+      "info": "",
+      "id": 5
+    },
+    {
+      "name": "Olga",
+      "surname": "Ogi",
+      "company": {
+        "name": "Allegro",
+        "color": "#ffe200",
+        "id": 5
+      },
+      "technology": "Angular",
+      "email": "Scandalousapp@gmail.com",
+      "info": "",
+      "id": 6
+    },
+    {
+      "name": "Julius",
+      "surname": "Handles",
+      "company": {
+        "name": "MerixStudio",
+        "color": "#ffb927",
+        "id": 4
+      },
+      "technology": "Flask",
+      "email": "Cloisteredapp@gmail.com",
+      "info": "",
       "id": 7
     },
     {
-      "name": "Steven",
-      "surname": "Gabenn",
+      "name": "Louisee",
+      "surname": "Jackson",
       "company": {
-        "id": 2,
-        "name": "Microsoft",
-        "color": "#472db3"
+        "name": "MerixStudio",
+        "color": "#ffb927",
+        "id": 4
       },
-      "technology": "Java",
+      "technology": "",
+      "email": "Likeableapp@gmail.com",
+      "info": "",
       "id": 8
     },
     {
-      "name": "Ella",
-      "surname": "Marcus",
+      "name": "Marc",
+      "surname": "Zucc",
       "company": {
-        "id": 6,
-        "name": "Oracle",
-        "color": "#ff0026"
-      },
-      "technology": "Spring",
-      "id": 9
-    },
-    {
-      "name": "Andrew",
-      "surname": "What'son",
-      "company": {
-        "id": 7,
-        "name": "Intel",
-        "color": "#00b3ff"
-      },
-      "technology": "Laravel",
-      "id": 10
-    },
-    {
-      "name": "Boris",
-      "surname": "Newton",
-      "company": {
-        "id": 8,
-        "name": "Visa",
-        "color": "#ff179a"
-      },
-      "technology": "Django",
-      "id": 11
-    },
-    {
-      "name": "Grace",
-      "surname": "Miller",
-      "company": {
-        "id": 7,
-        "name": "Intel",
-        "color": "#00b3ff"
-      },
-      "technology": "Assembler",
-      "id": 12
-    },
-    {
-      "name": "Marcus",
-      "surname": "Zakinto",
-      "company": {
-        "id": 3,
-        "name": "Facebook",
-        "color": "#472db3"
-      },
-      "technology": "Idk",
-      "info": "Need to eat more",
-      "id": 13
-    },
-    {
-      "name": "Young",
-      "surname": "Pui",
-      "company": {
-        "id": 3,
-        "name": "Facebook",
-        "color": "#472db3"
-      },
-      "technology": "Pascal",
-      "info": "",
-      "id": 15
-    },
-    {
-      "name": "Mark",
-      "surname": "Jak",
-      "company": {
-        "id": 2,
-        "name": "Microsoft",
-        "color": "#472db3"
+        "name": "DamTom",
+        "color": "#3cba7a",
+        "id": 7
       },
       "technology": "React.js",
-      "info": "Add personal informations",
-      "id": 17
+      "email": "Torpid@gmail.com",
+      "info": "Need to keep facebook alive",
+      "id": 9
     }
   ],
   "companies": [
