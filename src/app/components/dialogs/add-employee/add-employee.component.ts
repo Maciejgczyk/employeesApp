@@ -53,7 +53,7 @@ export class AddEmployeeComponent implements OnInit, OnDestroy {
       this.employeesService
         .createEmployee(this.employeeForm.value)
         .subscribe(() => {
-          this.employeesService.sendEmployeeAction();
+          this.employeesService.reloadEmployees();
           this.snackbarService.openSnackbar('Created successfully');
           this.dialogRef.close();
         });

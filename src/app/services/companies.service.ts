@@ -13,7 +13,7 @@ export class CompaniesService {
 
   constructor(private http: HttpClient) { }
 
-  sendCompanyAction(): void {
+  reloadCompanies(): void {
     this.companyActions.next();
   }
 

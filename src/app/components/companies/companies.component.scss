@@ -29,5 +29,9 @@
       color: $blue;
     }
   }
+}
 
+.input-field {
+  @include input-field($gray-secondary);
+  margin: 24px 8px;
 }

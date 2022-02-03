@@ -17,7 +17,7 @@ export class EmployeeCardComponent implements OnInit {
   deleteEmployee() {
     this.employeesService.deleteEmployee(this.employee.id)
       .subscribe(() => {
-        this.employeesService.sendEmployeeAction();
+        this.employeesService.reloadEmployees();
       });
   }
 }

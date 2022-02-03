@@ -16,7 +16,7 @@ export class EmployeesService {
 
   constructor(private http: HttpClient) {}
 
-  sendEmployeeAction(): void {
+  reloadEmployees(): void {
     this.employeeActions.next();
   }
 

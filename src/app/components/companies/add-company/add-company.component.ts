@@ -33,7 +33,7 @@ export class AddCompanyComponent implements OnInit {
         .createCompany(this.companyForm.value)
         .subscribe(() => {
           this.companyForm.reset();
-          this.companiesService.sendCompanyAction();
+          this.companiesService.reloadCompanies();
         });
     }
   }

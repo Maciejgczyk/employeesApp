@@ -12,17 +12,6 @@
       "id": 1
     },
     {
-      "name": "Linus",
-      "surname": "Webapp",
-      "company": {
-        "id": 1,
-        "name": "Winners.js",
-        "color": "#472db3"
-      },
-      "technology": "Svelte",
-      "id": 2
-    },
-    {
       "name": "Marcus",
       "surname": "Zaking",
       "company": {
@@ -180,6 +169,19 @@
       "technology": "React.js",
       "info": "Add personal informations",
       "id": 17
+    },
+    {
+      "name": "Mark",
+      "surname": "Zuckenbagen",
+      "company": {
+        "id": 7,
+        "name": "Intel",
+        "color": "#00b3ff"
+      },
+      "technology": "Angular",
+      "email": "mark@op.eu",
+      "info": "",
+      "id": 18
     }
   ],
   "companies": [
