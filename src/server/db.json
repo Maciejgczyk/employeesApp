@@ -116,6 +116,19 @@
       "email": "Torpid@gmail.com",
       "info": "Need to keep facebook alive",
       "id": 9
+    },
+    {
+      "name": "Damian",
+      "surname": "Tomczyk",
+      "company": {
+        "name": "DamTom",
+        "color": "#3cba7a",
+        "id": 7
+      },
+      "technology": "MySql",
+      "email": "damtom1975@o2.pl",
+      "info": "No info ",
+      "id": 10
     }
   ],
   "companies": [
@@ -138,6 +151,11 @@
       "name": "Netguru",
       "color": "#16f926",
       "id": 8
+    },
+    {
+      "name": "Microsoft",
+      "color": "#4380e9",
+      "id": 9
     }
   ],
   "admin": {
