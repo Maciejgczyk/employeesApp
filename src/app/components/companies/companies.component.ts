@@ -4,6 +4,8 @@ import { ICompany } from '../../interfaces/company.model';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmationComponent } from '../dialogs/confirmation/confirmation.component';
 import { Observable } from 'rxjs';
+import {FormControl} from "@angular/forms";
+import {debounceTime} from "rxjs/operators";
 
 @Component({
   selector: 'app-companies',
@@ -14,6 +16,9 @@ export class CompaniesComponent implements OnInit {
   allCompanies$: Observable<ICompany[]>;
   editedCompanyId: number;
 
+  search: FormControl = new FormControl('');
+
+
   constructor(
     private companiesService: CompaniesService,
     private dialog: MatDialog
@@ -22,6 +27,12 @@ export class CompaniesComponent implements OnInit {
   ngOnInit(): void {
     this.getCompanies();
     this.companiesService.reloadCompanies$.subscribe(() => this.getCompanies());
+
+    this.search.valueChanges
+      .pipe(
+        debounceTime(500)
+      )
+      .subscribe(value => this.searchCompanies(value))
   }
 
   getCompanies(): void {
@@ -45,8 +56,6 @@ export class CompaniesComponent implements OnInit {
   }
 
   searchCompanies(value): void {
-    this.allCompanies$ = this.companiesService.searchCompanies(
-      value.toLowerCase()
-    );
+    this.allCompanies$ = this.companiesService.searchCompanies(value);
   }
 }

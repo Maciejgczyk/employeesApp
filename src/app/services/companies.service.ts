@@ -23,7 +23,7 @@ export class CompaniesService {
 
   searchCompanies(value: string = ''): Observable<ICompany[]> {
     return this.getCompanies().pipe(
-      map(companies => companies.filter(el => el.name.toLowerCase().includes(value)))
+      map(companies => companies.filter(el => el.name.toLowerCase().includes(value.toLowerCase())))
     )
   }
 

@@ -1,5 +1,8 @@
 <app-add-company [actionName]="'Create company'"></app-add-company>
-<input placeholder="Look for.." class="input-field" (input)="searchCompanies($event.target.value)">
+<input
+  placeholder="Look for.."
+  class="input-field"
+  [formControl]="search">
 <ng-container *ngFor="let company of allCompanies$ | async">
   <div class="company">
     <app-add-company
