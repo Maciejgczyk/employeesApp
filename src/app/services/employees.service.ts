@@ -2,12 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { IEmployee } from '../interfaces/employee.model';
 import { Observable, Subject } from 'rxjs';
-import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
 })
 export class EmployeesService {
+  public baseUrl = 'http://localhost:3000/employees';
+
   private employeeActions = new Subject<any>();
   private searchEmployeeValue = new Subject<string>();
 
@@ -25,31 +26,18 @@ export class EmployeesService {
   }
 
   getEmployees(): Observable<IEmployee[]> {
-    return this.http.get<IEmployee[]>('http://localhost:3000/employees');
+    return this.http.get<IEmployee[]>(this.baseUrl);
   }
 
   createEmployee(employee: IEmployee): Observable<IEmployee> {
-    return this.http.post<IEmployee>(
-      'http://localhost:3000/employees',
-      employee
-    );
+    return this.http.post<IEmployee>(this.baseUrl, employee);
   }
 
   deleteEmployee(employeeId: number): Observable<IEmployee> {
-    return this.http.delete<IEmployee>(
-      `http://localhost:3000/employees/${employeeId}`
-    );
+    return this.http.delete<IEmployee>(`${this.baseUrl}/${employeeId}`);
   }
 
   searchEmployees(value: string = ''): Observable<IEmployee[]> {
-    return this.getEmployees().pipe(
-      map((employees) =>
-        employees.filter((employee) =>
-          `${employee.name} ${employee.surname}`
-            .toLowerCase()
-            .includes(value.toLowerCase())
-        )
-      )
-    );
+    return this.http.get<IEmployee[]>(`${this.baseUrl}?name_like=${value}`);
   }
 }
