@@ -27,13 +27,24 @@
   }
 
   &__name {
-    font-weight: 500;
+    font-weight: 600;
     font-size: 16px;
     color: $blue;
   }
 
+  &__position {
+    display: block;
+    margin: 6px 0;
+
+    color: $gray-secondary;
+    font-weight: 600;
+  }
+
   &__email {
     display: block;
+
+    color: $gray-secondary;
+    font-size: 12px;
   }
 
   &__technology {

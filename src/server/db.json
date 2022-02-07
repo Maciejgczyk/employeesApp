@@ -1,6 +1,19 @@
 {
   "employees": [
     {
+      "name": "Louisee",
+      "surname": "Jackson",
+      "company": {
+        "name": "MerixStudio",
+        "color": "#ffb927",
+        "id": 4
+      },
+      "technology": "",
+      "email": "Likeableapp@gmail.com",
+      "info": "",
+      "id": 7
+    },
+    {
       "name": "Bloody",
       "surname": "Elyth",
       "company": {
@@ -79,32 +92,6 @@
       "id": 6
     },
     {
-      "name": "Julius",
-      "surname": "Handles",
-      "company": {
-        "name": "MerixStudio",
-        "color": "#ffb927",
-        "id": 4
-      },
-      "technology": "Flask",
-      "email": "Cloisteredapp@gmail.com",
-      "info": "",
-      "id": 7
-    },
-    {
-      "name": "Louisee",
-      "surname": "Jackson",
-      "company": {
-        "name": "MerixStudio",
-        "color": "#ffb927",
-        "id": 4
-      },
-      "technology": "",
-      "email": "Likeableapp@gmail.com",
-      "info": "",
-      "id": 8
-    },
-    {
       "name": "Marc",
       "surname": "Zucc",
       "company": {
@@ -129,6 +116,20 @@
       "email": "damtom1975@o2.pl",
       "info": "No info ",
       "id": 10
+    },
+    {
+      "name": "Chris",
+      "surname": "Gogollino",
+      "company": {
+        "name": "Microsoft",
+        "color": "#3f51b5",
+        "id": 9
+      },
+      "technology": "React.js",
+      "email": "oracle@gmail.com",
+      "position": "Teacher",
+      "info": "",
+      "id": 11
     }
   ],
   "companies": [
@@ -144,7 +145,7 @@
     },
     {
       "name": "DamTom.pl",
-      "color": "#3cba7a",
+      "color": "#00190d",
       "id": 7
     },
     {

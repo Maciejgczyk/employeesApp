@@ -39,6 +39,7 @@ export class AddEmployeeComponent implements OnInit, OnDestroy {
       company: ['', Validators.required],
       technology: '',
       email: ['', Validators.email],
+      position: ['', Validators.required],
       info: ['', Validators.maxLength(100)],
     });
   }

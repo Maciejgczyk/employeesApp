@@ -32,6 +32,11 @@
         <input type='text' formControlName="email" matInput placeholder="E-mail" />
         <mat-error *ngIf="employeeForm.get('email').errors?.email">E-mail requires correct form</mat-error>
       </mat-form-field>
+      <mat-form-field class="container__form--fields--input" appearance="fill">
+        <mat-label>Position</mat-label>
+        <input type='text' formControlName="position" matInput placeholder="Position" />
+        <mat-error *ngIf="employeeForm.get('position').errors?.required">Position is required</mat-error>
+      </mat-form-field>
       <mat-form-field class="container__form--fields--textarea" appearance="fill">
         <mat-label>Additional info</mat-label>
         <textarea

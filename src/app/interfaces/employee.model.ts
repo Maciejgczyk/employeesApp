@@ -9,5 +9,6 @@ export interface IEmployee {
   };
   technology?: string;
   email?: string;
+  position: string;
   info?: string;
 }
