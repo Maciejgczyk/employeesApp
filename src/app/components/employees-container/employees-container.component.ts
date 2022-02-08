@@ -3,6 +3,7 @@ import { EmployeesService } from '../../services/employees.service';
 import { Subject } from 'rxjs';
 import { concatMap, takeUntil } from 'rxjs/operators';
 import { IEmployee } from 'src/app/interfaces/employee.model';
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-employees-container',
@@ -13,7 +14,7 @@ export class EmployeesContainerComponent implements OnInit, OnDestroy {
   destroyComponent$: Subject<boolean> = new Subject<boolean>();
   allEmployees: IEmployee[];
 
-  constructor(private employeesService: EmployeesService) {}
+  constructor(private employeesService: EmployeesService) { }
 
   ngOnInit(): void {
     this.getEmployees();
