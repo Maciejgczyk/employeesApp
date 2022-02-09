@@ -1,6 +1,10 @@
 @import 'src/app/styles/_variables';
 @import 'src/app/styles/_mixins';
 
+.back-button {
+  margin: 24px 8px;
+}
+
 .input-field {
   @include input-field($gray-secondary);
   margin: 24px 8px;

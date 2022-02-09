@@ -1,15 +1,16 @@
-import {Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {Component, OnInit } from '@angular/core';
 import { CompaniesService } from '../../services/companies.service';
 import { ICompany } from '../../interfaces/company.model';
 import { FormControl } from "@angular/forms";
 import { debounceTime } from "rxjs/operators";
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
+import { Location } from '@angular/common';
+
 
 @Component({
   selector: 'app-companies',
   templateUrl: './companies.component.html',
   styleUrls: ['./companies.component.scss'],
-  encapsulation: ViewEncapsulation.None
 })
 export class CompaniesComponent implements OnInit {
   allCompanies: ICompany[];
@@ -17,6 +18,7 @@ export class CompaniesComponent implements OnInit {
 
   constructor(
     private companiesService: CompaniesService,
+    private location: Location
   ) { }
 
   ngOnInit(): void {
@@ -28,6 +30,10 @@ export class CompaniesComponent implements OnInit {
         debounceTime(500)
       )
       .subscribe(value => this.searchCompanies(value))
+  }
+
+  back(): void {
+    this.location.back();
   }
 
   getCompanies(): void {
