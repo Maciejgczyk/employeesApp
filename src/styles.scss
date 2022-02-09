@@ -1,5 +1,12 @@
+@import "src/app/styles/_variables";
+
 * {
   font-family: 'Poppins', sans-serif;
+}
+
+.blue-snackbar {
+  background: $green;
+  color: $white;
 }
 
 html, body { height: 100%; }

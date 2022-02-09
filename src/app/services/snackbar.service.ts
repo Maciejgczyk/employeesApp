@@ -10,7 +10,8 @@ export class SnackbarService {
 
   openSnackbar(message: string): void {
     this.snackBar.open(message, '', {
-      duration: 1500
+      duration: 1500,
+      panelClass: ['blue-snackbar']
     });
   }
 }

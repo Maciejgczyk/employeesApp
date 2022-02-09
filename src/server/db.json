@@ -130,14 +130,37 @@
       "position": "Teacher",
       "info": "",
       "id": 11
+    },
+    {
+      "name": "Mariu",
+      "surname": "Shhhh",
+      "company": {
+        "name": "Allegro",
+        "color": "#ffe200",
+        "id": 5
+      },
+      "technology": "",
+      "email": "",
+      "position": "Angular Developer",
+      "info": "",
+      "id": 12
+    },
+    {
+      "name": "Mark",
+      "surname": "Zak",
+      "company": {
+        "name": "DamTom.pl",
+        "color": "#00190d",
+        "id": 7
+      },
+      "technology": "",
+      "email": "",
+      "position": "Webdeveloper",
+      "info": "",
+      "id": 13
     }
   ],
   "companies": [
-    {
-      "name": "MerixStudio",
-      "color": "#ffb927",
-      "id": 4
-    },
     {
       "name": "Allegro",
       "color": "#ffe200",
@@ -157,6 +180,11 @@
       "name": "Microsoft",
       "color": "#3f51b5",
       "id": 9
+    },
+    {
+      "name": "Merixstudio",
+      "color": "#ffb10d",
+      "id": 10
     }
   ],
   "admin": {
