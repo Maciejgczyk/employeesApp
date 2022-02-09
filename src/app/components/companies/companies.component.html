@@ -1,35 +1,8 @@
 <app-add-company [actionName]="'Create company'"></app-add-company>
-<input
-  placeholder="Look for.."
-  class="input-field"
-  [formControl]="search">
+<input placeholder="Look for.." class="input-field" [formControl]="search" />
 <div cdkDropList (cdkDropListDropped)="drop($event)">
   <div *ngFor="let company of allCompanies" cdkDrag>
-    <div class="company">
-      <app-add-company
-        *ngIf="editedCompanyId === company.id; else companyInfo"
-        [editedCompany]="company"
-        [actionName]="'Save changes'"
-        (onSave)="editedCompanyId = null"
-      ></app-add-company>
-      <ng-template #companyInfo>
-        <div class="company__info">
-          <span class="company__info--name">{{ company.name }}</span>
-          <div
-            [ngStyle]="{ background: company.color }"
-            class="company__info--color"
-          ></div>
-        </div>
-        <div class="company__actions">
-          <button mat-icon-button (click)="editedCompanyId = company.id">
-            <mat-icon>edit</mat-icon>
-          </button>
-          <button mat-icon-button (click)="deleteCompany(company.id, company.name)" >
-            <mat-icon>delete</mat-icon>
-          </button>
-        </div>
-      </ng-template>
-    </div>
+    <app-company-card [company]="company"></app-company-card>
     <mat-divider></mat-divider>
   </div>
 </div>

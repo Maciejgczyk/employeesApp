@@ -17,6 +17,7 @@ import { HeaderRoutingModule } from './components/header/header-routing.module';
 import { AddCompanyComponent } from './components/companies/add-company/add-company.component';
 import { ColorPickerModule } from 'ngx-color-picker';
 import { ConfirmationComponent } from './components/dialogs/confirmation/confirmation.component';
+import { CompanyCardComponent } from './components/companies/company-card/company-card.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { ConfirmationComponent } from './components/dialogs/confirmation/confirm
     CompaniesComponent,
     AddCompanyComponent,
     ConfirmationComponent,
+    CompanyCardComponent,
   ],
   imports: [
     BrowserModule,
