@@ -3,31 +3,33 @@
   placeholder="Look for.."
   class="input-field"
   [formControl]="search">
-<ng-container *ngFor="let company of allCompanies$ | async">
-  <div class="company">
-    <app-add-company
-      *ngIf="editedCompanyId === company.id; else companyInfo"
-      [editedCompany]="company"
-      [actionName]="'Save changes'"
-      (onSave)="editedCompanyId = null"
-    ></app-add-company>
-    <ng-template #companyInfo>
-      <div class="company__info">
-        <span class="company__info--name">{{ company.name }}</span>
-        <div
-          [ngStyle]="{ background: company.color }"
-          class="company__info--color"
-        ></div>
-      </div>
-      <div class="company__actions">
-        <button mat-icon-button (click)="editedCompanyId = company.id">
-          <mat-icon>edit</mat-icon>
-        </button>
-        <button mat-icon-button (click)="deleteCompany(company.id, company.name)" >
-          <mat-icon>delete</mat-icon>
-        </button>
-      </div>
-    </ng-template>
+<div cdkDropList (cdkDropListDropped)="drop($event)">
+  <div *ngFor="let company of allCompanies" cdkDrag>
+    <div class="company">
+      <app-add-company
+        *ngIf="editedCompanyId === company.id; else companyInfo"
+        [editedCompany]="company"
+        [actionName]="'Save changes'"
+        (onSave)="editedCompanyId = null"
+      ></app-add-company>
+      <ng-template #companyInfo>
+        <div class="company__info">
+          <span class="company__info--name">{{ company.name }}</span>
+          <div
+            [ngStyle]="{ background: company.color }"
+            class="company__info--color"
+          ></div>
+        </div>
+        <div class="company__actions">
+          <button mat-icon-button (click)="editedCompanyId = company.id">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button (click)="deleteCompany(company.id, company.name)" >
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+      </ng-template>
+    </div>
+    <mat-divider></mat-divider>
   </div>
-  <mat-divider></mat-divider>
-</ng-container>
+</div>

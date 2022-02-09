@@ -4,8 +4,9 @@ import { ICompany } from '../../interfaces/company.model';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmationComponent } from '../dialogs/confirmation/confirmation.component';
 import { Observable } from 'rxjs';
-import {FormControl} from "@angular/forms";
-import {debounceTime} from "rxjs/operators";
+import { FormControl } from "@angular/forms";
+import { debounceTime } from "rxjs/operators";
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-companies',
@@ -13,7 +14,7 @@ import {debounceTime} from "rxjs/operators";
   styleUrls: ['./companies.component.scss'],
 })
 export class CompaniesComponent implements OnInit {
-  allCompanies$: Observable<ICompany[]>;
+  allCompanies: ICompany[];
   editedCompanyId: number;
 
   search: FormControl = new FormControl('');
@@ -22,7 +23,7 @@ export class CompaniesComponent implements OnInit {
   constructor(
     private companiesService: CompaniesService,
     private dialog: MatDialog
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.getCompanies();
@@ -36,7 +37,7 @@ export class CompaniesComponent implements OnInit {
   }
 
   getCompanies(): void {
-    this.allCompanies$ = this.companiesService.getCompanies();
+    this.companiesService.getCompanies().subscribe(companies => this.allCompanies = companies)
   }
 
   deleteCompany(companyId: number, companyName: string): void {
@@ -56,6 +57,11 @@ export class CompaniesComponent implements OnInit {
   }
 
   searchCompanies(value): void {
-    this.allCompanies$ = this.companiesService.searchCompanies(value);
+    this.companiesService.searchCompanies(value).subscribe(companies => this.allCompanies = companies);
+  }
+
+  drop(event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.allCompanies, event.previousIndex, event.currentIndex);
+    // this.companiesService.updateCompaniesOrder(this.allCompanies).subscribe();
   }
 }

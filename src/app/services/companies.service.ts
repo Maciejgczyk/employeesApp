@@ -12,7 +12,7 @@ export class CompaniesService {
   private companyActions = new Subject<any>();
   public reloadCompanies$ = this.companyActions.asObservable();
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   reloadCompanies(): void {
     this.companyActions.next();
@@ -21,6 +21,10 @@ export class CompaniesService {
   getCompanies(): Observable<ICompany[]> {
     return this.http.get<ICompany[]>(this.baseUrl);
   }
+
+  // updateCompaniesOrder(companies: ICompany[]): Observable<ICompany[]> {
+  //   return this.http.put<ICompany[]>(this.baseUrl, companies);
+  // }
 
   searchCompanies(value: string = ''): Observable<ICompany[]> {
     return this.http.get<ICompany[]>(`${this.baseUrl}?name_like=${value}`);
