@@ -158,6 +158,20 @@
       "position": "Webdeveloper",
       "info": "",
       "id": 13
+    },
+    {
+      "name": "dasdsa",
+      "surname": "dasdasdas",
+      "company": {
+        "name": "Netguru",
+        "color": "#16f926",
+        "id": 8
+      },
+      "technology": "dasdas",
+      "email": "dasdas@o2.pl",
+      "position": "dsadas",
+      "info": "das",
+      "id": 14
     }
   ],
   "companies": [
@@ -190,5 +204,12 @@
   "admin": {
     "username": "admin",
     "password": "admin"
-  }
+  },
+  "users": [
+    {
+      "email": "mateusz@o2.pl",
+      "password": "$2a$10$AMNukkM6g/3Fhd66GYDoZu9H6AMNGEkO3Yrl23Is5kTuNpubsP12e",
+      "id": 1
+    }
+  ]
 }

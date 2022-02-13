@@ -18,6 +18,7 @@ import { AddCompanyComponent } from './components/companies/add-company/add-comp
 import { ColorPickerModule } from 'ngx-color-picker';
 import { ConfirmationComponent } from './components/dialogs/confirmation/confirmation.component';
 import { CompanyCardComponent } from './components/companies/company-card/company-card.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { CompanyCardComponent } from './components/companies/company-card/compan
     AddCompanyComponent,
     ConfirmationComponent,
     CompanyCardComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
