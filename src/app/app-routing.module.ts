@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {MainComponent} from "./components/main/main.component";
 import {LoginComponent} from "./components/login/login.component";
+import {AppGuard} from "./services/app.guard";
 
 const routes: Routes = [
   {
@@ -15,6 +16,7 @@ const routes: Routes = [
   },
   {
     path: 'main',
+    canActivate: [AppGuard],
     component: MainComponent
   },
   {

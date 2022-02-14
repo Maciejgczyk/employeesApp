@@ -7,7 +7,7 @@ import { MainComponent } from './components/main/main.component';
 import { HeaderComponent } from './components/header/header.component';
 import { EmployeesContainerComponent } from './components/employees-container/employees-container.component';
 import { EmployeeCardComponent } from './components/employee-card/employee-card.component';
-import { HttpClientModule } from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { MaterialModule } from './shared/modules/material.module';
 import { AddEmployeeComponent } from './components/dialogs/add-employee/add-employee.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -19,6 +19,7 @@ import { ColorPickerModule } from 'ngx-color-picker';
 import { ConfirmationComponent } from './components/dialogs/confirmation/confirmation.component';
 import { CompanyCardComponent } from './components/companies/company-card/company-card.component';
 import { LoginComponent } from './components/login/login.component';
+import {TokenInterceptor} from "./shared/token.interceptor";
 
 @NgModule({
   declarations: [
@@ -44,7 +45,10 @@ import { LoginComponent } from './components/login/login.component';
     ReactiveFormsModule,
     ColorPickerModule,
   ],
-  providers: [HttpClientModule],
+  providers: [
+    HttpClientModule,
+    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

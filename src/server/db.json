@@ -158,20 +158,6 @@
       "position": "Webdeveloper",
       "info": "",
       "id": 13
-    },
-    {
-      "name": "dasdsa",
-      "surname": "dasdasdas",
-      "company": {
-        "name": "Netguru",
-        "color": "#16f926",
-        "id": 8
-      },
-      "technology": "dasdas",
-      "email": "dasdas@o2.pl",
-      "position": "dsadas",
-      "info": "das",
-      "id": 14
     }
   ],
   "companies": [
@@ -201,10 +187,6 @@
       "id": 10
     }
   ],
-  "admin": {
-    "username": "admin",
-    "password": "admin"
-  },
   "users": [
     {
       "email": "mateusz@o2.pl",
