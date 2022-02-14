@@ -1,0 +1,21 @@
+@import "src/app/styles/_variables";
+@import "src/app/styles/_mixins";
+
+.container {
+  height: 100vh;
+  width: 100vw;
+
+  background: $gray;
+  @include flex-center-center;
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    width: 392px;
+  }
+}
+
+.input-field {
+  @include input-field($blue);
+  margin: 16px 0;
+}

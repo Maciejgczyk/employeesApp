@@ -1,7 +1,42 @@
-<div class="container" [formGroup]="loginForm" (ngSubmit)="login()">
-  <form>
-    <input type="email" placeholder="E-mail" formControlName="email">
-    <input type="password" placeholder="Password" formControlName="password">
-    <button type="submit">Login</button>
+<div class="container">
+  <form [formGroup]="loginForm" (ngSubmit)="login()" class="container__form">
+    <input
+      formControlName="email"
+      type="email"
+      placeholder="E-mail"
+      class="input-field"
+    />
+    <ng-container
+      *ngIf="loginForm.get('email').touched && loginForm.get('email').invalid"
+    >
+      <span *ngIf="loginForm.get('email').errors?.required" class="mat-error"
+        >Field is required</span
+      >
+      <span *ngIf="loginForm.get('email').errors?.email" class="mat-error"
+        >Enter valid email</span
+      >
+    </ng-container>
+    <input
+      formControlName="password"
+      type="password"
+      placeholder="Password"
+      class="input-field"
+    />
+    <span
+      *ngIf="
+        loginForm.get('password').touched &&
+        loginForm.get('password').errors?.required
+      "
+      class="mat-error"
+      >Field is required</span
+    >
+    <button
+      type="submit"
+      mat-flat-button
+      color="primary"
+      style="margin: 16px 0"
+    >
+      Login
+    </button>
   </form>
 </div>
