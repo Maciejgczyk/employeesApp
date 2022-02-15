@@ -14,12 +14,13 @@ export class AuthService {
   private userSession = new BehaviorSubject<IUser>(null);
 
   getToken() {
-
+    const session = this.userSession.getValue();
+    return session?.accessToken;
   }
 
   login(user): Observable<IUser> {
     return this.http.post<IUser>('http://localhost:3000/login', user).pipe(
-      tap(el => console.log(el))
+      tap(session => this.userSession.next(session))
     )
   }
 }
