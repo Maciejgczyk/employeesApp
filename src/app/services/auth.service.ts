@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {BehaviorSubject, Observable} from "rxjs";
 import {IUser} from "../interfaces/user.model";
-import {tap} from "rxjs/operators";
+import {map, tap} from "rxjs/operators";
 
 @Injectable({
   providedIn: 'root'
@@ -13,14 +13,23 @@ export class AuthService {
 
   private userSession = new BehaviorSubject<IUser>(null);
 
+  isLogin = false;
+
+  state = this.userSession.pipe(
+    map(session => !!session),
+    tap(state => this.isLogin = state)
+  )
+
   getToken() {
-    const session = this.userSession.getValue();
-    return session?.accessToken;
+    return localStorage.getItem('token')
   }
 
-  login(user): Observable<IUser> {
+  login(user: IUser): Observable<IUser> {
     return this.http.post<IUser>('http://localhost:3000/login', user).pipe(
-      tap(session => this.userSession.next(session))
+      tap(session => {
+        this.userSession.next(session)
+        localStorage.setItem('token', session?.accessToken);
+      })
     )
   }
 }
