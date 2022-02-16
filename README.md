@@ -4,8 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. <br>
-Run `json-server-auth db.json` for a json server. <br>
+Run `npm start` for a dev server. Navigate to `http://localhost:4200/`. <br>
 
 ## Code scaffolding
 
