@@ -22,10 +22,6 @@ export class CompaniesService {
     return this.http.get<ICompany[]>(this.baseUrl);
   }
 
-  // updateCompaniesOrder(companies: ICompany[]): Observable<ICompany[]> {
-  //   return this.http.put<ICompany[]>(this.baseUrl, companies);
-  // }
-
   searchCompanies(value: string = ''): Observable<ICompany[]> {
     return this.http.get<ICompany[]>(`${this.baseUrl}?name_like=${value}`);
   }

@@ -21,6 +21,7 @@ import { CompanyCardComponent } from './components/companies/company-card/compan
 import { LoginComponent } from './components/login/login.component';
 import {TokenInterceptor} from "./shared/token.interceptor";
 import { RegisterComponent } from './components/register/register.component';
+import { FiltersComponent } from './components/dialogs/filters/filters.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { RegisterComponent } from './components/register/register.component';
     CompanyCardComponent,
     LoginComponent,
     RegisterComponent,
+    FiltersComponent,
   ],
   imports: [
     BrowserModule,

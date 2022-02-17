@@ -1,0 +1,14 @@
+<form>
+  <mat-form-field appearance="fill">
+    <mat-label>Company</mat-label>
+    <mat-select (selectionChange)="onChange($event.value)">
+      <mat-option *ngFor="let company of allCompanies" [value]="company">
+        {{ company }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <button (click)="clearFilters()" class="clear-button" mat-button type="button">
+    Clear
+  </button>
+</form>

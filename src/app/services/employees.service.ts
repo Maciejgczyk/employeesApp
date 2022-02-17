@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { IEmployee } from '../interfaces/employee.model';
 import { Observable, Subject } from 'rxjs';
+import {share} from "rxjs/operators";
 
 @Injectable({
   providedIn: 'root',
@@ -11,9 +12,11 @@ export class EmployeesService {
 
   private employeeActions = new Subject<any>();
   private searchEmployeeValue = new Subject<string>();
+  private filterEmployees = new Subject<any>();
 
   public reloadEmployees$ = this.employeeActions.asObservable();
   public searchValue$ = this.searchEmployeeValue.asObservable();
+  public filterEmployees$ = this.filterEmployees.asObservable();
 
   constructor(private http: HttpClient) {}
 
@@ -25,8 +28,18 @@ export class EmployeesService {
     this.searchEmployeeValue.next(value);
   }
 
+  sendFilteredEmployees(value: string): void {
+    this.filterEmployees.next(value);
+  }
+
   getEmployees(): Observable<IEmployee[]> {
-    return this.http.get<IEmployee[]>(this.baseUrl);
+    return this.http.get<IEmployee[]>(this.baseUrl).pipe(
+      share()
+    );
+  }
+
+  getFilteredEmployees(value: string): Observable<IEmployee[]> {
+    return this.http.get<IEmployee[]>(`${this.baseUrl}?company.name=${value}`)
   }
 
   createEmployee(employee: IEmployee): Observable<IEmployee> {
