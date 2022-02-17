@@ -29,6 +29,10 @@ export class EmployeesService {
     return this.http.get<IEmployee[]>(this.baseUrl);
   }
 
+  getFilteredEmployees(value: string): Observable<IEmployee[]> {
+    return this.http.get<IEmployee[]>(`${this.baseUrl}?company.name=${value}`)
+  }
+
   createEmployee(employee: IEmployee): Observable<IEmployee> {
     return this.http.post<IEmployee>(this.baseUrl, employee);
   }
