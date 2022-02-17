@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {CompaniesService} from "../../../services/companies.service";
-import {map, tap} from "rxjs/operators";
+import {map} from "rxjs/operators";
 import {EmployeesService} from "../../../services/employees.service";
 
 @Component({
@@ -19,9 +19,11 @@ export class FiltersComponent implements OnInit {
     ).subscribe(item => this.allCompanies = item);
   }
 
-  onChange(value: any) {
-    this.employeesService.getFilteredEmployees(value).pipe(
-      tap(el => console.log(el))
-    ).subscribe();
+  onChange(value: string): void {
+    this.employeesService.sendFilteredEmployees(value);
+  }
+
+  clearFilters() {
+    this.employeesService.reloadEmployees();
   }
 }
