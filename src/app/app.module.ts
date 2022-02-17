@@ -20,6 +20,7 @@ import { ConfirmationComponent } from './components/dialogs/confirmation/confirm
 import { CompanyCardComponent } from './components/companies/company-card/company-card.component';
 import { LoginComponent } from './components/login/login.component';
 import {TokenInterceptor} from "./shared/token.interceptor";
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import {TokenInterceptor} from "./shared/token.interceptor";
     ConfirmationComponent,
     CompanyCardComponent,
     LoginComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,

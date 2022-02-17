@@ -1,0 +1,83 @@
+<div class="container">
+  <form
+    [formGroup]="registerForm"
+    (ngSubmit)="register()"
+    class="container__form"
+  >
+    <input
+      formControlName="nickname"
+      type="text"
+      placeholder="Nickname"
+      class="input-field"
+    />
+    <ng-container
+      *ngIf="
+        registerForm.get('nickname').touched &&
+        registerForm.get('nickname').invalid
+      "
+    >
+      <span
+        *ngIf="registerForm.get('nickname').errors?.required"
+        class="mat-error"
+        >Field is required</span
+      >
+      <span
+        *ngIf="registerForm.get('nickname').errors?.minlength"
+        class="mat-error"
+        >Field requires at least 3 characters</span
+      >
+    </ng-container>
+    <input
+      formControlName="email"
+      type="email"
+      placeholder="E-mail"
+      class="input-field"
+    />
+    <ng-container
+      *ngIf="
+        registerForm.get('email').touched && registerForm.get('email').invalid
+      "
+    >
+      <span *ngIf="registerForm.get('email').errors?.required" class="mat-error"
+        >Field is required</span
+      >
+      <span *ngIf="registerForm.get('email').errors?.email" class="mat-error"
+        >Enter valid email</span
+      >
+    </ng-container>
+    <input
+      formControlName="password"
+      type="password"
+      placeholder="Password"
+      class="input-field"
+    />
+    <ng-container
+      *ngIf="
+        registerForm.get('password').touched &&
+        registerForm.get('password').invalid
+      "
+    >
+      <span
+        *ngIf="registerForm.get('password').errors?.required"
+        class="mat-error"
+        >Field is required</span
+      >
+      <span
+        *ngIf="registerForm.get('password').errors?.minlength"
+        class="mat-error"
+        >Field requires at least 4 characters</span
+      >
+    </ng-container>
+    <button
+      type="submit"
+      mat-flat-button
+      color="primary"
+      style="margin: 16px 0"
+    >
+      Register
+    </button>
+    <button type="button" routerLink="/login" mat-button>
+      Already have an account? Log in here.
+    </button>
+  </form>
+</div>

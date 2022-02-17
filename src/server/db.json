@@ -192,6 +192,18 @@
       "email": "mateusz@o2.pl",
       "password": "$2a$10$AMNukkM6g/3Fhd66GYDoZu9H6AMNGEkO3Yrl23Is5kTuNpubsP12e",
       "id": 1
+    },
+    {
+      "email": "mati@o2.pl",
+      "password": "$2a$10$ajGjF2nBjClSnc0rdtq2iuqdq3bqKZ35e1B1nKMiQYJJGlDoIlfG6",
+      "nickname": "mati",
+      "id": 2
+    },
+    {
+      "email": "maciej@o2.pl",
+      "password": "$2a$10$Hpfafnf4hnEfkbVtWOPH4ud5pUjhVmPi0dkaUoT2V9VfycTUj9pNW",
+      "nickname": "maciej",
+      "id": 3
     }
   ]
 }
