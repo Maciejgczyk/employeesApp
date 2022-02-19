@@ -1,7 +1,12 @@
 <div class="employee">
-  <button (click)="deleteEmployee()" class="employee__delete" mat-icon-button>
-    <mat-icon>delete</mat-icon>
-  </button>
+  <div class="employee__settings">
+    <button class="employee__delete" mat-icon-button>
+      <mat-icon>edit</mat-icon>
+    </button>
+    <button (click)="deleteEmployee()" mat-icon-button>
+      <mat-icon>delete</mat-icon>
+    </button>
+  </div>
   <span class="employee__name"> {{ employee.name }} {{ employee.surname }}</span>
   <span class="employee__position"> {{ employee.position ? employee.position : 'No position' }} </span>
   <span class="employee__email">{{ employee.email ? employee.email : 'No e-mail' }}</span>

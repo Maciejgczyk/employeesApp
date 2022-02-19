@@ -18,10 +18,10 @@
     transform: scale(1.03);
   }
 
-  &__delete {
+  &__settings {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 6px;
+    right: 6px;
 
     color: $blue;
   }
