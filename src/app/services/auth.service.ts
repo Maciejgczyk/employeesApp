@@ -10,7 +10,7 @@ import { map, tap } from 'rxjs/operators';
 export class AuthService {
   constructor(private http: HttpClient) {}
 
-  private userSession = new BehaviorSubject<IUser>(null);
+  private userSession = new BehaviorSubject<IUser>(JSON.parse(localStorage.getItem('user')));
 
   isLogin = false;
 
@@ -20,14 +20,14 @@ export class AuthService {
   );
 
   getToken() {
-    return localStorage.getItem('token');
+    return this.userSession.getValue()?.accessToken;
   }
 
   login(user: IUser): Observable<IUser> {
     return this.http.post<IUser>('http://localhost:3000/login', user).pipe(
       tap((session) => {
         this.userSession.next(session);
-        localStorage.setItem('token', session?.accessToken);
+        localStorage.setItem('user', JSON.stringify(session));
       })
     );
   }
