@@ -9,11 +9,11 @@
     <ng-container
       *ngIf="loginForm.get('email').touched && loginForm.get('email').invalid"
     >
-      <span *ngIf="loginForm.get('email').errors?.required" class="mat-error"
-        >Field is required</span
+      <mat-error *ngIf="loginForm.get('email').errors?.required"
+        >Field is required</mat-error
       >
-      <span *ngIf="loginForm.get('email').errors?.email" class="mat-error"
-        >Enter valid email</span
+      <mat-error *ngIf="loginForm.get('email').errors?.email"
+        >Enter valid email</mat-error
       >
     </ng-container>
     <input
@@ -22,13 +22,12 @@
       placeholder="Password"
       class="input-field"
     />
-    <span
+    <mat-error
       *ngIf="
         loginForm.get('password').touched &&
         loginForm.get('password').errors?.required
       "
-      class="mat-error"
-      >Field is required</span
+      >Field is required</mat-error
     >
     <button
       type="submit"

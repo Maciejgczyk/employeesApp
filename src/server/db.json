@@ -27,19 +27,6 @@
       "id": 1
     },
     {
-      "name": "Demon",
-      "surname": "Joric",
-      "company": {
-        "name": "DamTom",
-        "color": "#3cba7a",
-        "id": 7
-      },
-      "technology": "Pascal",
-      "email": "Concernedapp@gmail.com",
-      "info": "",
-      "id": 2
-    },
-    {
       "name": "Dark",
       "surname": "Oloend",
       "company": {

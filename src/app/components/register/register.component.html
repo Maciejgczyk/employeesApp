@@ -16,15 +16,13 @@
         registerForm.get('nickname').invalid
       "
     >
-      <span
+      <mat-error
         *ngIf="registerForm.get('nickname').errors?.required"
-        class="mat-error"
-        >Field is required</span
+        >Field is required</mat-error
       >
-      <span
+      <mat-error
         *ngIf="registerForm.get('nickname').errors?.minlength"
-        class="mat-error"
-        >Field requires at least 3 characters</span
+        >Field requires at least 3 characters</mat-error
       >
     </ng-container>
     <input
@@ -38,11 +36,11 @@
         registerForm.get('email').touched && registerForm.get('email').invalid
       "
     >
-      <span *ngIf="registerForm.get('email').errors?.required" class="mat-error"
-        >Field is required</span
+      <mat-error *ngIf="registerForm.get('email').errors?.required"
+        >Field is required</mat-error
       >
-      <span *ngIf="registerForm.get('email').errors?.email" class="mat-error"
-        >Enter valid email</span
+      <mat-error *ngIf="registerForm.get('email').errors?.email"
+        >Enter valid email</mat-error
       >
     </ng-container>
     <input
@@ -57,15 +55,13 @@
         registerForm.get('password').invalid
       "
     >
-      <span
+      <mat-error
         *ngIf="registerForm.get('password').errors?.required"
-        class="mat-error"
-        >Field is required</span
+        >Field is required</mat-error
       >
-      <span
+      <mat-error
         *ngIf="registerForm.get('password').errors?.minlength"
-        class="mat-error"
-        >Field requires at least 4 characters</span
+        >Field requires at least 4 characters</mat-error
       >
     </ng-container>
     <button
