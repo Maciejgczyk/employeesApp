@@ -92,19 +92,6 @@
       "id": 9
     },
     {
-      "name": "Damian",
-      "surname": "Tomczyk",
-      "company": {
-        "name": "DamTom",
-        "color": "#3cba7a",
-        "id": 7
-      },
-      "technology": "MySql",
-      "email": "damtom1975@o2.pl",
-      "info": "No info ",
-      "id": 10
-    },
-    {
       "name": "Chris",
       "surname": "Gogollino",
       "company": {
@@ -145,6 +132,34 @@
       "position": "Webdeveloper",
       "info": "",
       "id": 13
+    },
+    {
+      "name": "Nick",
+      "surname": "James",
+      "company": {
+        "name": "Allegro",
+        "color": "#ffe200",
+        "id": 5
+      },
+      "technology": "Angular",
+      "email": "jahames@o2.pl",
+      "position": "Angular Dev",
+      "info": "",
+      "id": 14
+    },
+    {
+      "name": "Matthew",
+      "surname": "Uru",
+      "company": {
+        "name": "DamTom.pl",
+        "color": "#00190d",
+        "id": 7
+      },
+      "technology": "DevOps",
+      "email": "matur@o2.pl",
+      "position": "DevOps",
+      "info": "",
+      "id": 15
     }
   ],
   "companies": [
@@ -191,6 +206,18 @@
       "password": "$2a$10$Hpfafnf4hnEfkbVtWOPH4ud5pUjhVmPi0dkaUoT2V9VfycTUj9pNW",
       "nickname": "maciej",
       "id": 3
+    },
+    {
+      "email": "ada@o2.pl",
+      "password": "$2a$10$uq7gLfd.zGi6lvbj4O/Dge4tARnFGsXxmlkhomx/kAPZjbAer8XNS",
+      "nickname": "Adrianna",
+      "id": 4
+    },
+    {
+      "email": "test@o2.pl",
+      "password": "$2a$10$u75osPmJc7o9fAKmoyd.DuXuXn2.9.wvOOEUslRJce5Lq.iDZaRKq",
+      "nickname": "test",
+      "id": 5
     }
   ]
 }

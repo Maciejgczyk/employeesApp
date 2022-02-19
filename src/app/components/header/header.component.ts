@@ -5,6 +5,8 @@ import { AddEmployeeComponent } from '../dialogs/add-employee/add-employee.compo
 import { FormControl } from '@angular/forms';
 import { debounceTime } from 'rxjs/operators';
 import {FiltersComponent} from "../dialogs/filters/filters.component";
+import {AuthService} from "../../services/auth.service";
+import {IUser} from "../../interfaces/user.model";
 
 @Component({
   selector: 'app-header',
@@ -13,16 +15,20 @@ import {FiltersComponent} from "../dialogs/filters/filters.component";
 })
 export class HeaderComponent implements OnInit {
   search: FormControl = new FormControl('');
+  userData: IUser;
 
   constructor(
     private dialog: MatDialog,
-    private employeesService: EmployeesService
+    private employeesService: EmployeesService,
+    private auth: AuthService
   ) {}
 
   ngOnInit(): void {
     this.search.valueChanges
       .pipe(debounceTime(500))
       .subscribe((value) => this.employeesService.sendSearchValue(value));
+
+    this.userData = this.auth.getUserData();
   }
 
   addEmployee(): void {
@@ -31,5 +37,9 @@ export class HeaderComponent implements OnInit {
 
   openFilters(): void {
     this.dialog.open(FiltersComponent);
+  }
+
+  logout(): void {
+    this.auth.logout();
   }
 }

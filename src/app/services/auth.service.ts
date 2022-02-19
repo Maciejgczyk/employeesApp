@@ -2,25 +2,19 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { IUser } from '../interfaces/user.model';
-import { map, tap } from 'rxjs/operators';
+import { tap } from 'rxjs/operators';
+import {Router} from "@angular/router";
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
   private userSession = new BehaviorSubject<IUser>(JSON.parse(localStorage.getItem('user')));
 
-  isLogin = false;
-
-  state = this.userSession.pipe(
-    map((session) => !!session),
-    tap((state) => (this.isLogin = state))
-  );
-
-  getToken() {
-    return this.userSession.getValue()?.accessToken;
+  getUserData(): IUser {
+    return this.userSession.getValue();
   }
 
   login(user: IUser): Observable<IUser> {
@@ -30,6 +24,12 @@ export class AuthService {
         localStorage.setItem('user', JSON.stringify(session));
       })
     );
+  }
+
+  logout(): void {
+    localStorage.removeItem('user');
+    this.userSession.next(null);
+    this.router.navigate(['/login']);
   }
 
   register(user: IUser) {

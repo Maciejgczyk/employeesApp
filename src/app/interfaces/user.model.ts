@@ -1,7 +1,9 @@
 export interface IUser {
   accessToken: string;
-  id: number;
-  email: string;
-  password: string;
-  nickname?: string;
+  user : {
+    id: number;
+    email: string;
+    password: string;
+    nickname?: string;
+  }
 }

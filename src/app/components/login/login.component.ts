@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private authService: AuthService,
+    private auth: AuthService,
     private router: Router
   ) {}
 
@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
 
   login(): void {
     if (this.loginForm.valid) {
-      this.authService.login(this.loginForm.value).subscribe(() => {
+      this.auth.login(this.loginForm.value).subscribe(() => {
         this.router.navigate(['/main']);
       });
     }
