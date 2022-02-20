@@ -22,6 +22,7 @@ import { LoginComponent } from './components/login/login.component';
 import {TokenInterceptor} from "./shared/token.interceptor";
 import { RegisterComponent } from './components/register/register.component';
 import { FiltersComponent } from './components/dialogs/filters/filters.component';
+import { SettingsComponent } from './components/settings/settings.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { FiltersComponent } from './components/dialogs/filters/filters.component
     LoginComponent,
     RegisterComponent,
     FiltersComponent,
+    SettingsComponent,
   ],
   imports: [
     BrowserModule,

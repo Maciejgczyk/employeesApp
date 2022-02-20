@@ -40,19 +40,6 @@
       "id": 3
     },
     {
-      "name": "Ahmad",
-      "surname": "Baino",
-      "company": {
-        "name": "Allegro",
-        "color": "#ffe200",
-        "id": 5
-      },
-      "technology": "",
-      "email": "",
-      "info": "",
-      "id": 4
-    },
-    {
       "name": "Giselle",
       "surname": "Rataj",
       "company": {
@@ -202,10 +189,16 @@
       "id": 2
     },
     {
-      "email": "maciej@o2.pl",
+      "email": "maciej@wp.pl",
       "password": "$2a$10$Hpfafnf4hnEfkbVtWOPH4ud5pUjhVmPi0dkaUoT2V9VfycTUj9pNW",
       "nickname": "maciej",
-      "id": 3
+      "id": 3,
+      "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1hY2llakB3cC5wbCIsImlhdCI6MTY0NTM5NTEyMSwiZXhwIjoxNjQ1Mzk4NzIxLCJzdWIiOiIzIn0.37KrrsN-hTmtS5rbbBebjEZYj3aEiAnqYOAXlaALrX8",
+      "user": {
+        "email": "maciej@wp.pl",
+        "nickname": "maciej",
+        "id": 3
+      }
     },
     {
       "email": "ada@o2.pl",

@@ -1,0 +1,51 @@
+<button
+  (click)="back()"
+  type="submit"
+  mat-flat-button
+  color="primary"
+  class="back-button"
+>
+  <mat-icon>keyboard_backspace</mat-icon>
+</button>
+<form [formGroup]="userForm" (ngSubmit)="changeUserData()" class="form">
+  <input
+    type="text"
+    formControlName="nickname"
+    class="form__field"
+    placeholder="Nickname"
+  />
+  <ng-container
+    *ngIf="userForm.get('nickname').touched && userForm.get('nickname').invalid"
+  >
+    <mat-error *ngIf="userForm.get('nickname').errors?.required"
+      >Field is required</mat-error
+    >
+    <mat-error *ngIf="userForm.get('nickname').errors?.minlength"
+      >Field requires at least 3 characters</mat-error
+    >
+  </ng-container>
+  <input
+    type="email"
+    formControlName="email"
+    class="form__field"
+    placeholder="Email"
+  />
+  <ng-container
+    *ngIf="userForm.get('email').touched && userForm.get('email').invalid"
+  >
+    <mat-error *ngIf="userForm.get('email').errors?.required"
+      >Field is required</mat-error
+    >
+    <mat-error *ngIf="userForm.get('email').errors?.email"
+      >Enter valid email</mat-error
+    >
+  </ng-container>
+  <button
+    type="submit"
+    mat-flat-button
+    color="primary"
+    class="form__button"
+  >
+    Save
+  </button>
+</form>
