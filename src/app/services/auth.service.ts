@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { IUser } from '../interfaces/user.model';
 import { tap } from 'rxjs/operators';
-import {Router} from "@angular/router";
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
@@ -11,7 +11,9 @@ import {Router} from "@angular/router";
 export class AuthService {
   constructor(private http: HttpClient, private router: Router) {}
 
-  private userSession = new BehaviorSubject<IUser>(JSON.parse(localStorage.getItem('user')));
+  private userSession = new BehaviorSubject<IUser>(
+    JSON.parse(localStorage.getItem('user'))
+  );
 
   getUserData(): IUser {
     return this.userSession.getValue();
@@ -34,5 +36,11 @@ export class AuthService {
 
   register(user: IUser) {
     return this.http.post<IUser>('http://localhost:3000/register', user);
+  }
+
+  changeUserData(user: IUser) {
+    return this.http
+      .patch<IUser>(`http://localhost:3000/users/${user?.user?.id}`, user)
+      .pipe(tap((session) => this.userSession.next(session)));
   }
 }

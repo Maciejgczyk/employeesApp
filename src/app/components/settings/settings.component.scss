@@ -1,0 +1,22 @@
+@import "src/app/styles/_mixins";
+@import "src/app/styles/_variables";
+
+
+.form {
+  margin: 24px 0;
+  @include flex-column;
+
+  &__field {
+    @include input-field($blue);
+
+    margin: 12px 0;
+  }
+
+  &__button {
+    margin: 12px 0;
+  }
+}
+
+.back-button {
+  margin: 24px 0 0;
+}
