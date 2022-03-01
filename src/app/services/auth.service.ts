@@ -43,4 +43,8 @@ export class AuthService {
       .patch<IUser>(`http://localhost:3000/users/${id}`, user)
       .pipe(tap((session) => this.userSession.next(session)));
   }
+
+  deleteUser(id: number) {
+    return this.http.delete(`http://localhost:3000/users/${id}`)
+  }
 }

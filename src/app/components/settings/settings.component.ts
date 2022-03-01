@@ -2,9 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { IUser } from '../../interfaces/user.model';
 import { AuthService } from '../../services/auth.service';
 import { Location } from '@angular/common';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { SnackbarService } from '../../services/snackbar.service';
 import {Router} from "@angular/router";
+import {ConfirmationComponent} from "../dialogs/confirmation/confirmation.component";
+import {MatDialog} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-settings',
@@ -19,6 +21,7 @@ export class SettingsComponent implements OnInit {
     private auth: AuthService,
     private location: Location,
     private router: Router,
+    private dialog: MatDialog,
     private fb: FormBuilder,
     private snackbarService: SnackbarService
   ) {}
@@ -51,5 +54,22 @@ export class SettingsComponent implements OnInit {
 
   back(): void {
     this.location.back();
+  }
+
+  deleteAccount() {
+    const confirmDialog = this.dialog.open(ConfirmationComponent, {
+      data: {
+        title: 'Delete account',
+        message: 'Are you sure, you want to delete your account?',
+      },
+    });
+    confirmDialog.afterClosed().subscribe((result) => {
+      if (result === true) {
+        this.auth.deleteUser(this.userData?.user?.id).subscribe(() => {
+          this.snackbarService.openSnackbar('Deleted successfully')
+          this.router.navigate(['login'])
+        })
+      }
+    });
   }
 }
