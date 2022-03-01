@@ -38,9 +38,9 @@ export class AuthService {
     return this.http.post<IUser>('http://localhost:3000/register', user);
   }
 
-  changeUserData(user: IUser) {
+  changeUserData(user: IUser, id: number) {
     return this.http
-      .patch<IUser>(`http://localhost:3000/users/${user?.user?.id}`, user)
+      .patch<IUser>(`http://localhost:3000/users/${id}`, user)
       .pipe(tap((session) => this.userSession.next(session)));
   }
 }

@@ -10,7 +10,7 @@
     <button  routerLink="/companies" class="header-btn" mat-button>Companies</button>
     <button mat-button class="header-btn" [matMenuTriggerFor]="userOptions">{{ userData?.user?.nickname }}</button>
     <mat-menu #userOptions="matMenu">
-      <button routerLink="/main/settings" mat-menu-item>
+      <button routerLink="/settings" mat-menu-item>
         <mat-icon>settings</mat-icon>
         Settings
       </button>

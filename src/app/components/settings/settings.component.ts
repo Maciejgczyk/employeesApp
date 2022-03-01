@@ -4,6 +4,7 @@ import { AuthService } from '../../services/auth.service';
 import { Location } from '@angular/common';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SnackbarService } from '../../services/snackbar.service';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-settings',
@@ -17,6 +18,7 @@ export class SettingsComponent implements OnInit {
   constructor(
     private auth: AuthService,
     private location: Location,
+    private router: Router,
     private fb: FormBuilder,
     private snackbarService: SnackbarService
   ) {}
@@ -37,15 +39,13 @@ export class SettingsComponent implements OnInit {
   }
 
   changeUserData(): void {
-    const newUserData = {
-      accessToken: this.userData?.accessToken,
-      user: { ...this.userData.user, ...this.userForm.value },
-    };
+    const user = this.userForm.value
     if (this.userForm.valid) {
-      this.auth.changeUserData(newUserData).subscribe(() => {
-        this.snackbarService.openSnackbar('Data changed successfully');
-        localStorage.setItem('user', JSON.stringify(newUserData as IUser));
-      });
+      this.auth.changeUserData(user, this.userData?.user?.id)
+        .subscribe(() => {
+          this.snackbarService.openSnackbar('Data changed successfully')
+          this.router.navigate(['login'])
+        })
     }
   }
 
