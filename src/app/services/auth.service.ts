@@ -19,10 +19,15 @@ export class AuthService {
     return this.userSession.getValue();
   }
 
+  getData(): Observable<any> {
+    return this.http.get<any>('http://localhost:3000/users/5');
+  }
+
   login(user: IUser): Observable<IUser> {
     return this.http.post<IUser>('http://localhost:3000/login', user).pipe(
       tap((session) => {
         this.userSession.next(session);
+        console.log(session?.user?.password)
         localStorage.setItem('user', JSON.stringify(session));
       })
     );
