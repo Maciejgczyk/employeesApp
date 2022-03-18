@@ -38,6 +38,10 @@ export class EmployeesService {
     );
   }
 
+  getEmployeeById(employeeId: number): Observable<IEmployee> {
+    return this.http.get<IEmployee>(`${this.baseUrl}/${employeeId}`);
+  }
+
   getFilteredEmployees(value: string): Observable<IEmployee[]> {
     const params = {
       'company.name': value

@@ -1,6 +1,6 @@
 <div class="employee">
   <div class="employee__settings">
-    <button class="employee__delete" mat-icon-button>
+    <button [routerLink]="['/employee', employee.id]" class="employee__delete" mat-icon-button>
       <mat-icon>edit</mat-icon>
     </button>
     <button (click)="deleteEmployee()" mat-icon-button>
