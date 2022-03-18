@@ -135,24 +135,24 @@
       "id": 14
     },
     {
-      "name": "Matthew",
-      "surname": "Uru",
+      "name": "Mark",
+      "surname": "zUCCC",
       "company": {
-        "name": "DamTom.pl",
-        "color": "#00190d",
-        "id": 7
+        "name": "Netguru",
+        "color": "#16f926",
+        "id": 8
       },
-      "technology": "DevOps",
-      "email": "matur@o2.pl",
-      "position": "DevOps",
-      "info": "",
+      "technology": "Angular",
+      "email": "mt@o2.pl",
+      "position": "dsadas",
+      "info": "dasdas",
       "id": 15
     }
   ],
   "companies": [
     {
-      "name": "Allegro",
-      "color": "#ffe200",
+      "name": "Allegrooo",
+      "color": "#bcb263",
       "id": 5
     },
     {
@@ -174,6 +174,11 @@
       "name": "MerixStudio",
       "color": "#ffb10d",
       "id": 10
+    },
+    {
+      "name": "Meriiiix",
+      "color": "#5b6393",
+      "id": 11
     }
   ],
   "users": [
@@ -194,6 +199,12 @@
       "password": "$2a$10$v6MQWO2azpvrMbEX4V9Ki.onIAwwBL9U/TYAplmjKI0oVbW1Z5w7q",
       "nickname": "mateu",
       "id": 6
+    },
+    {
+      "email": "matio@o2.pl",
+      "password": "$2a$10$G9BDr4ENEYqEjSDVwBWKQ.rcme5Mn0TmS9s2NSsA.xnhqJBt9j2uW",
+      "nickname": "matiiii",
+      "id": 7
     }
   ]
 }

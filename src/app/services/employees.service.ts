@@ -39,7 +39,13 @@ export class EmployeesService {
   }
 
   getFilteredEmployees(value: string): Observable<IEmployee[]> {
-    return this.http.get<IEmployee[]>(`${this.baseUrl}?company.name=${value}`)
+    const params = {
+      'company.name': value
+    }
+
+    return this.http.get<IEmployee[]>(this.baseUrl, {
+      params: params
+    })
   }
 
   createEmployee(employee: IEmployee): Observable<IEmployee> {
