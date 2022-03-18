@@ -4,7 +4,7 @@
       formControlName="email"
       type="email"
       placeholder="E-mail"
-      class="input-field"
+      class="input-field username-field"
     />
     <ng-container
       *ngIf="loginForm.get('email').touched && loginForm.get('email').invalid"
@@ -20,7 +20,7 @@
       formControlName="password"
       type="password"
       placeholder="Password"
-      class="input-field"
+      class="input-field password-field"
     />
     <mat-error
       *ngIf="
@@ -34,6 +34,7 @@
       mat-flat-button
       color="primary"
       style="margin: 16px 0"
+      class="login-btn"
     >
       Login
     </button>
