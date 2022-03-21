@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { IEmployee } from '../interfaces/employee.model';
 import { forkJoin, Observable, Subject } from 'rxjs';
-import { map } from "rxjs/operators";
-import { IEmployeeDetails } from "../interfaces/employee-details.model";
-import { CompaniesService } from "./companies.service";
+import { map } from 'rxjs/operators';
+import { IEmployeeDetails } from '../interfaces/employee-details.model';
+import { CompaniesService } from './companies.service';
 
 @Injectable({
   providedIn: 'root',
@@ -18,7 +18,10 @@ export class EmployeesService {
   public reloadEmployees$ = this.employeeActions.asObservable();
   public searchValue$ = this.searchEmployeeValue.asObservable();
 
-  constructor(private http: HttpClient, private companiesService: CompaniesService) {}
+  constructor(
+    private http: HttpClient,
+    private companiesService: CompaniesService
+  ) {}
 
   reloadEmployees(): void {
     this.employeeActions.next();
@@ -35,15 +38,17 @@ export class EmployeesService {
   getEmployeesWithDetails(): Observable<IEmployeeDetails[]> {
     return forkJoin([
       this.getEmployees(),
-      this.companiesService.getCompanies()
-    ]).pipe(map(([employee, companies]) => employee.map(item =>
-      {
-        return {
-          data: item,
-          company: companies.find(company => company.id == item.companyId)
-        }
-      })
-    ))
+      this.companiesService.getCompanies(),
+    ]).pipe(
+      map(([employee, companies]) =>
+        employee.map((item) => {
+          return {
+            data: item,
+            company: companies.find((company) => company.id == item.companyId),
+          };
+        })
+      )
+    );
   }
 
   getEmployeeById(employeeId: number): Observable<IEmployee> {
@@ -59,16 +64,14 @@ export class EmployeesService {
   }
 
   searchEmployees(value: string = ''): Observable<IEmployeeDetails[]> {
-    return forkJoin([
-      this.http.get<any>(`${this.baseUrl}?name_like=${value}`),
-      this.http.get<any>('http://localhost:3000/companies')
-    ]).pipe(map(([employee, companies]) => employee.map(item =>
-      {
-        return {
-          data: item,
-          company: companies.find(x=> x.id == item.companyId)
-        }
-      })
-    ))
+    return this.getEmployeesWithDetails().pipe(
+      map((employees) =>
+        employees.filter(({ data }) =>
+          `${data.name} ${data.surname}`
+            .toLowerCase()
+            .includes(value.toLowerCase())
+        )
+      )
+    );
   }
 }

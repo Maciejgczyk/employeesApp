@@ -9,12 +9,32 @@
       "position": "Ceo",
       "info": "",
       "id": 17
+    },
+    {
+      "name": "Maciej",
+      "surname": "Grigor",
+      "companyId": 5,
+      "technology": "Angular",
+      "email": "macjikk@o2.pl",
+      "position": "Angular Dev",
+      "info": "",
+      "id": 18
+    },
+    {
+      "name": "Mateusz",
+      "surname": "Tomczyk",
+      "companyId": 9,
+      "technology": "Angular",
+      "email": "mati@o2.pl",
+      "position": "Angular Dev",
+      "info": "",
+      "id": 19
     }
   ],
   "companies": [
     {
-      "name": "Allegrooo",
-      "color": "#bcb263",
+      "name": "Koding.pl",
+      "color": "#ffe200",
       "id": 5
     },
     {
