@@ -2,11 +2,7 @@ export interface IEmployee {
   id: number;
   name: string;
   surname: string;
-  company: {
-    id: number;
-    name: string;
-    color: string;
-  };
+  companyId: number;
   technology?: string;
   email?: string;
   position: string;

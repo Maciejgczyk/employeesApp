@@ -1,21 +1,21 @@
 <div class="employee">
   <div class="employee__settings">
-    <button [routerLink]="['/employee', employee.id]" class="employee__delete" mat-icon-button>
+    <button [routerLink]="['/employee', employee?.data?.id]" class="employee__delete" mat-icon-button>
       <mat-icon>edit</mat-icon>
     </button>
     <button (click)="deleteEmployee()" mat-icon-button>
       <mat-icon>delete</mat-icon>
     </button>
   </div>
-  <span class="employee__name"> {{ employee.name }} {{ employee.surname }}</span>
-  <span class="employee__position"> {{ employee.position ? employee.position : 'No position' }} </span>
-  <span class="employee__email">{{ employee.email ? employee.email : 'No e-mail' }}</span>
+  <span class="employee__name"> {{ employee?.data?.name }} {{ employee?.data?.surname }}</span>
+  <span class="employee__position"> {{ employee?.data?.position ? employee?.data?.position : 'No position' }} </span>
+  <span class="employee__email">{{ employee?.data?.email ? employee?.data?.email : 'No e-mail' }}</span>
   <div class="employee__company">
     <div
-      [ngStyle]="{'background': employee.company.color}"
+      [ngStyle]="{'background': employee?.company?.color}"
       class="employee__company--color"
     ></div>
-    <span class="employee__company--name"> {{ employee.company.name }} </span>
+    <span class="employee__company--name"> {{ employee?.company?.name }} </span>
   </div>
-  <span class="employee__technology">{{ employee.technology ? employee.technology : 'No Technology' }}</span>
+  <span class="employee__technology">{{ employee?.data?.technology ? employee?.data?.technology : 'No Technology' }}</span>
 </div>

@@ -1,9 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { IEmployee } from 'src/app/interfaces/employee.model';
 import { EmployeesService } from 'src/app/services/employees.service';
 import { ConfirmationComponent } from '../dialogs/confirmation/confirmation.component';
 import {SnackbarService} from "../../services/snackbar.service";
+import {IEmployeeDetails} from "../../interfaces/employee-details.model";
 
 @Component({
   selector: 'app-employee-card',
@@ -11,7 +11,7 @@ import {SnackbarService} from "../../services/snackbar.service";
   styleUrls: ['./employee-card.component.scss']
 })
 export class EmployeeCardComponent implements OnInit {
-  @Input() employee: IEmployee
+  @Input() employee: IEmployeeDetails;
 
   constructor(
     private employeesService: EmployeesService,
@@ -25,12 +25,12 @@ export class EmployeeCardComponent implements OnInit {
     const confirmDialog = this.dialog.open(ConfirmationComponent, {
       data: {
         title: 'Remove Employee',
-        message: `Are you sure, you want to remove an employee: ${this.employee.name} ${this.employee.surname}?`
+        message: `Are you sure, you want to remove an employee: ${this.employee?.data?.name} ${this.employee?.data?.surname}?`
       }
     })
     confirmDialog.afterClosed().subscribe(result => {
-      if (result === true) {
-        this.employeesService.deleteEmployee(this.employee.id)
+      if (result) {
+        this.employeesService.deleteEmployee(this.employee?.data?.id)
           .subscribe(() => {
             this.employeesService.reloadEmployees();
             this.snackbarService.openSnackbar('Deleted successfully');
