@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { EmployeesService } from '../../services/employees.service';
 import { Subject } from 'rxjs';
 import { concatMap, takeUntil } from 'rxjs/operators';
-import { IEmployee } from 'src/app/interfaces/employee.model';
+import {IEmployeeDetails} from "../../interfaces/employee-details.model";
 
 @Component({
   selector: 'app-employees-container',
@@ -11,7 +11,7 @@ import { IEmployee } from 'src/app/interfaces/employee.model';
 })
 export class EmployeesContainerComponent implements OnInit, OnDestroy {
   destroyComponent$: Subject<boolean> = new Subject<boolean>();
-  allEmployees: IEmployee[];
+  allEmployees: IEmployeeDetails[];
 
   constructor(private employeesService: EmployeesService) {}
 
@@ -19,20 +19,15 @@ export class EmployeesContainerComponent implements OnInit, OnDestroy {
     this.getEmployees();
     this.employeesService.reloadEmployees$.subscribe(() => this.getEmployees());
 
-    this.employeesService.filterEmployees$
-      .pipe(
-        concatMap((value) => this.employeesService.getFilteredEmployees(value))
-      )
-      .subscribe((el) => (this.allEmployees = el));
-
     this.employeesService.searchValue$
       .pipe(concatMap((value) => this.employeesService.searchEmployees(value)))
       .subscribe((el) => (this.allEmployees = el));
+
   }
 
   getEmployees(): void {
     this.employeesService
-      .getEmployees()
+      .getEmployeesWithDetails()
       .pipe(takeUntil(this.destroyComponent$))
       .subscribe((items) => (this.allEmployees = items));
   }

@@ -5,7 +5,6 @@
     class="header__input"
     placeholder="Look for...">
   <div class="header__options">
-    <button (click)="openFilters()" class="header-btn" mat-button>Filters</button>
     <button (click)="addEmployee()" class="header-btn" mat-button>Create employee</button>
     <button  routerLink="/companies" class="header-btn" mat-button>Companies</button>
     <button mat-button class="header-btn" [matMenuTriggerFor]="userOptions">{{ userData?.user?.nickname }}</button>

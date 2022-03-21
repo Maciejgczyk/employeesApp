@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { IEmployee } from '../interfaces/employee.model';
-import { Observable, Subject } from 'rxjs';
-import {share} from "rxjs/operators";
+import { forkJoin, Observable, Subject } from 'rxjs';
+import { map } from "rxjs/operators";
+import { IEmployeeDetails } from "../interfaces/employee-details.model";
+import { CompaniesService } from "./companies.service";
 
 @Injectable({
   providedIn: 'root',
@@ -12,13 +14,11 @@ export class EmployeesService {
 
   private employeeActions = new Subject<any>();
   private searchEmployeeValue = new Subject<string>();
-  private filterEmployees = new Subject<any>();
 
   public reloadEmployees$ = this.employeeActions.asObservable();
   public searchValue$ = this.searchEmployeeValue.asObservable();
-  public filterEmployees$ = this.filterEmployees.asObservable();
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private companiesService: CompaniesService) {}
 
   reloadEmployees(): void {
     this.employeeActions.next();
@@ -28,28 +28,26 @@ export class EmployeesService {
     this.searchEmployeeValue.next(value);
   }
 
-  sendFilteredEmployees(value: string): void {
-    this.filterEmployees.next(value);
+  getEmployees(): Observable<IEmployee[]> {
+    return this.http.get<IEmployee[]>(this.baseUrl);
   }
 
-  getEmployees(): Observable<IEmployee[]> {
-    return this.http.get<IEmployee[]>(this.baseUrl).pipe(
-      share()
-    );
+  getEmployeesWithDetails(): Observable<IEmployeeDetails[]> {
+    return forkJoin([
+      this.getEmployees(),
+      this.companiesService.getCompanies()
+    ]).pipe(map(([employee, companies]) => employee.map(item =>
+      {
+        return {
+          data: item,
+          company: companies.find(company => company.id == item.companyId)
+        }
+      })
+    ))
   }
 
   getEmployeeById(employeeId: number): Observable<IEmployee> {
     return this.http.get<IEmployee>(`${this.baseUrl}/${employeeId}`);
-  }
-
-  getFilteredEmployees(value: string): Observable<IEmployee[]> {
-    const params = {
-      'company.name': value
-    }
-
-    return this.http.get<IEmployee[]>(this.baseUrl, {
-      params: params
-    })
   }
 
   createEmployee(employee: IEmployee): Observable<IEmployee> {
@@ -60,7 +58,17 @@ export class EmployeesService {
     return this.http.delete<IEmployee>(`${this.baseUrl}/${employeeId}`);
   }
 
-  searchEmployees(value: string = ''): Observable<IEmployee[]> {
-    return this.http.get<IEmployee[]>(`${this.baseUrl}?name_like=${value}`);
+  searchEmployees(value: string = ''): Observable<IEmployeeDetails[]> {
+    return forkJoin([
+      this.http.get<any>(`${this.baseUrl}?name_like=${value}`),
+      this.http.get<any>('http://localhost:3000/companies')
+    ]).pipe(map(([employee, companies]) => employee.map(item =>
+      {
+        return {
+          data: item,
+          company: companies.find(x=> x.id == item.companyId)
+        }
+      })
+    ))
   }
 }

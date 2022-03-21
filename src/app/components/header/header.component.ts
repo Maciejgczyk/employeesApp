@@ -4,7 +4,6 @@ import { EmployeesService } from 'src/app/services/employees.service';
 import { AddEmployeeComponent } from '../dialogs/add-employee/add-employee.component';
 import { FormControl } from '@angular/forms';
 import { debounceTime } from 'rxjs/operators';
-import {FiltersComponent} from "../dialogs/filters/filters.component";
 import {AuthService} from "../../services/auth.service";
 import {IUser} from "../../interfaces/user.model";
 
@@ -33,10 +32,6 @@ export class HeaderComponent implements OnInit {
 
   addEmployee(): void {
     this.dialog.open(AddEmployeeComponent);
-  }
-
-  openFilters(): void {
-    this.dialog.open(FiltersComponent);
   }
 
   logout(): void {

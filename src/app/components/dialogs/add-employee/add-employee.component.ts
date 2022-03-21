@@ -36,7 +36,7 @@ export class AddEmployeeComponent implements OnInit, OnDestroy {
     this.employeeForm = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(2)]],
       surname: ['', [Validators.required, Validators.minLength(3)]],
-      company: ['', Validators.required],
+      companyId: ['', Validators.required],
       technology: '',
       email: ['', Validators.email],
       position: ['', Validators.required],
