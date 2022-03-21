@@ -67,8 +67,7 @@ export class EmployeesService {
     return this.getEmployeesWithDetails().pipe(
       map((employees) =>
         employees.filter(({ data }) =>
-          `${data.name} ${data.surname}`
-            .toLowerCase()
+          `${data.name} ${data.surname}`.toLowerCase()
             .includes(value.toLowerCase())
         )
       )
