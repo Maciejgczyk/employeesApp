@@ -29,11 +29,101 @@
       "position": "Angular Dev",
       "info": "",
       "id": 19
+    },
+    {
+      "name": "Kentucky",
+      "surname": "Kwock",
+      "companyId": 9,
+      "technology": "Azure",
+      "email": "kfc@o2.pl",
+      "position": "DevOps Engineer",
+      "info": "",
+      "id": 20
+    },
+    {
+      "name": "Joseph",
+      "surname": "Broski",
+      "companyId": 8,
+      "technology": "",
+      "email": "",
+      "position": "Intern",
+      "info": "",
+      "id": 21
+    },
+    {
+      "name": "Cristian",
+      "surname": "Freiberg",
+      "companyId": 7,
+      "technology": "Scala",
+      "email": "frei@de.pl",
+      "position": "Scala Developer",
+      "info": "ToDo: - Learn react.js",
+      "id": 22
+    },
+    {
+      "name": "Jordan",
+      "surname": "Clarkson",
+      "companyId": 5,
+      "technology": "",
+      "email": "",
+      "position": "Intern",
+      "info": "",
+      "id": 23
+    },
+    {
+      "name": "Celine",
+      "surname": "Morron",
+      "companyId": 10,
+      "technology": "Django",
+      "email": "ce.ma@e.ce",
+      "position": "Backend Developer",
+      "info": "",
+      "id": 24
+    },
+    {
+      "name": "Edd",
+      "surname": "Sheeran",
+      "companyId": 9,
+      "technology": "",
+      "email": "",
+      "position": "Musician",
+      "info": "",
+      "id": 25
+    },
+    {
+      "name": "Malaki",
+      "surname": "Cain",
+      "companyId": 7,
+      "technology": "Angular",
+      "email": "",
+      "position": "Angular Developer",
+      "info": "",
+      "id": 26
+    },
+    {
+      "name": "Crisian",
+      "surname": "Cruz",
+      "companyId": 7,
+      "technology": "Php",
+      "email": "",
+      "position": "Php Developer",
+      "info": "",
+      "id": 27
+    },
+    {
+      "name": "Edwin",
+      "surname": "McKay",
+      "companyId": 9,
+      "technology": "Svelte",
+      "email": "",
+      "position": "Svelte Developer",
+      "info": "",
+      "id": 28
     }
   ],
   "companies": [
     {
-      "name": "Koding.pl",
+      "name": "Koding",
       "color": "#ffe200",
       "id": 5
     },
