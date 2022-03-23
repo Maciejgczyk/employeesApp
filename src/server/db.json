@@ -11,24 +11,24 @@
       "id": 17
     },
     {
+      "id": 18,
       "name": "Maciej",
       "surname": "Grigor",
-      "companyId": 5,
+      "companyId": 8,
       "technology": "Angular",
       "email": "macjikk@o2.pl",
       "position": "Angular Dev",
-      "info": "",
-      "id": 18
+      "info": ""
     },
     {
+      "id": 19,
       "name": "Mateusz",
       "surname": "Tomczyk",
-      "companyId": 9,
+      "companyId": 12,
       "technology": "Angular",
       "email": "mati@o2.pl",
-      "position": "Angular Dev",
-      "info": "",
-      "id": 19
+      "position": "Angular Developer",
+      "info": "Need to be on onboarding"
     },
     {
       "name": "Kentucky",
@@ -119,6 +119,46 @@
       "position": "Svelte Developer",
       "info": "",
       "id": 28
+    },
+    {
+      "name": "Marcus",
+      "surname": "Rashford",
+      "companyId": 5,
+      "technology": "Svelte",
+      "email": "rsf@o2.pl",
+      "position": "Svelte Developer",
+      "info": "Svelte - to learn",
+      "id": 29
+    },
+    {
+      "name": "Lil",
+      "surname": "Uzi",
+      "companyId": 7,
+      "technology": "Python",
+      "email": "",
+      "position": "Python engineer",
+      "info": "",
+      "id": 30
+    },
+    {
+      "name": "Kris",
+      "surname": "Grigorck",
+      "companyId": 12,
+      "technology": "",
+      "email": "",
+      "position": "Intern",
+      "info": "",
+      "id": 31
+    },
+    {
+      "name": "Quiselle",
+      "surname": "Rataj",
+      "companyId": 12,
+      "technology": "",
+      "email": "",
+      "position": "Lecturer",
+      "info": "",
+      "id": 32
     }
   ],
   "companies": [

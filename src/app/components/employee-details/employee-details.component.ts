@@ -4,6 +4,10 @@ import { switchMap } from 'rxjs/operators';
 import {EmployeesService} from "../../services/employees.service";
 import {IEmployee} from "../../interfaces/employee.model";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {CompaniesService} from "../../services/companies.service";
+import {ICompany} from "../../interfaces/company.model";
+import {Location} from "@angular/common";
+import {SnackbarService} from "../../services/snackbar.service";
 
 @Component({
   selector: 'app-employee-details',
@@ -12,11 +16,16 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 })
 export class EmployeeDetailsComponent implements OnInit {
   employee: IEmployee;
+  companies: ICompany[];
+
   employeeForm: FormGroup;
 
   constructor(
     private employeesService: EmployeesService,
+    private companiesService: CompaniesService,
+    private snackbarService: SnackbarService,
     private route: ActivatedRoute,
+    private location: Location,
     private fb: FormBuilder
   ) { }
 
@@ -37,9 +46,18 @@ export class EmployeeDetailsComponent implements OnInit {
           info: [this.employee.info, Validators.maxLength(100)],
         })
     });
+
+    this.companiesService.getCompanies().subscribe(companies => this.companies = companies);
   }
 
-  saveEmployee() {
-    this.employeesService.saveEmployee(this.employeeForm.value).subscribe();
+  saveEmployee(): void {
+    this.employeesService.saveEmployee(this.employeeForm.value).subscribe(() => {
+      this.snackbarService.openSnackbar('Saved successfully');
+      this.back();
+    });
+  }
+
+  back(): void {
+    this.location.back();
   }
 }

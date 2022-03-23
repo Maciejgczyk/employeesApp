@@ -2,10 +2,14 @@
 @import "src/app/styles/_variables";
 
 .container {
-  margin: 42px 0;
+  margin: 24px 0;
 
   &__form--fields {
     display: flex;
     flex-direction: column;
   }
+}
+
+.back-button {
+  margin: 24px 0;
 }
