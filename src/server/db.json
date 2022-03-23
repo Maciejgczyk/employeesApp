@@ -24,7 +24,7 @@
       "id": 19,
       "name": "Mateusz",
       "surname": "Tomczyk",
-      "companyId": 12,
+      "companyId": 13,
       "technology": "Angular",
       "email": "mati@o2.pl",
       "position": "Angular Developer",
@@ -163,8 +163,8 @@
   ],
   "companies": [
     {
-      "name": "Koding",
-      "color": "#ffe200",
+      "name": "Koding.pl",
+      "color": "#ff9100",
       "id": 5
     },
     {
@@ -196,6 +196,26 @@
       "name": "Code2137",
       "color": "#54e28e",
       "id": 12
+    },
+    {
+      "name": "Newell",
+      "color": "#cfd7ff",
+      "id": 13
+    },
+    {
+      "name": "Google",
+      "color": "#28be07",
+      "id": 14
+    },
+    {
+      "name": "Zappka",
+      "color": "#fffea9",
+      "id": 15
+    },
+    {
+      "name": "Maciejgczyk.pl",
+      "color": "#726c55",
+      "id": 16
     }
   ],
   "users": [
@@ -212,16 +232,22 @@
       "id": 5
     },
     {
-      "email": "mati@o2.pl",
-      "password": "$2a$10$v6MQWO2azpvrMbEX4V9Ki.onIAwwBL9U/TYAplmjKI0oVbW1Z5w7q",
-      "nickname": "mateu",
-      "id": 6
-    },
-    {
       "email": "matio@o2.pl",
       "password": "$2a$10$G9BDr4ENEYqEjSDVwBWKQ.rcme5Mn0TmS9s2NSsA.xnhqJBt9j2uW",
       "nickname": "matiiii",
       "id": 7
+    },
+    {
+      "email": "maciejas@o2.pl",
+      "password": "$2a$10$FMLuLCXbyMTMWUgdm4FQPunINKO5qgFZe9M7faxfVsjbxWLMZVgFq",
+      "nickname": "MaciejGczyk",
+      "id": 8
+    },
+    {
+      "email": "mati@o2.pl",
+      "password": "$2a$10$8LbLgYE5Ym.715LZ9qg4Z.xV8Thdrc8j..Ct0f6PZJ0VdPLswWf0u",
+      "nickname": "Mateusz Tomczyk",
+      "id": 9
     }
   ]
 }

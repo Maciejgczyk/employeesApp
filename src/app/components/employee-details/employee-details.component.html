@@ -34,7 +34,7 @@
       <mat-form-field appearance="fill">
         <mat-label>Company</mat-label>
         <mat-select formControlName="companyId">
-          <mat-option *ngFor="let company of companies" [value]="company.id">
+          <mat-option *ngFor="let company of companies$ | async" [value]="company.id">
             {{ company.name }}
           </mat-option>
         </mat-select>

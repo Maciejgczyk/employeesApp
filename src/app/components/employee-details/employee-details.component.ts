@@ -8,6 +8,7 @@ import {CompaniesService} from "../../services/companies.service";
 import {ICompany} from "../../interfaces/company.model";
 import {Location} from "@angular/common";
 import {SnackbarService} from "../../services/snackbar.service";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-employee-details',
@@ -16,7 +17,7 @@ import {SnackbarService} from "../../services/snackbar.service";
 })
 export class EmployeeDetailsComponent implements OnInit {
   employee: IEmployee;
-  companies: ICompany[];
+  companies$: Observable<ICompany[]>;
 
   employeeForm: FormGroup;
 
@@ -47,7 +48,7 @@ export class EmployeeDetailsComponent implements OnInit {
         })
     });
 
-    this.companiesService.getCompanies().subscribe(companies => this.companies = companies);
+    this.companies$ = this.companiesService.getCompanies();
   }
 
   saveEmployee(): void {
