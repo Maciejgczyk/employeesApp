@@ -42,7 +42,7 @@ export class EmployeeDetailsComponent implements OnInit {
           surname: [this.employee.surname, [Validators.required, Validators.minLength(3)]],
           companyId: [this.employee.companyId, Validators.required],
           technology: this.employee.technology,
-          email: [this.employee.email, Validators.required],
+          email: this.employee.email,
           position: [this.employee.position, Validators.required],
           info: [this.employee.info, Validators.maxLength(100)],
         })
