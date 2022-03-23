@@ -51,14 +51,14 @@
       "id": 21
     },
     {
-      "name": "Cristian",
+      "id": 22,
+      "name": "Cristianoooo",
       "surname": "Freiberg",
       "companyId": 7,
       "technology": "Scala",
       "email": "frei@de.pl",
       "position": "Scala Developer",
-      "info": "ToDo: - Learn react.js",
-      "id": 22
+      "info": "ToDo: - Learn react.js"
     },
     {
       "name": "Jordan",
@@ -129,7 +129,7 @@
     },
     {
       "name": "DamTom",
-      "color": "#00190d",
+      "color": "#d956ff",
       "id": 7
     },
     {
@@ -139,7 +139,7 @@
     },
     {
       "name": "Microsoft",
-      "color": "#3f51b5",
+      "color": "#0068ff",
       "id": 9
     },
     {
@@ -149,8 +149,13 @@
     },
     {
       "name": "Facebook",
-      "color": "#3350ff",
+      "color": "#00d4ff",
       "id": 11
+    },
+    {
+      "name": "Code2137",
+      "color": "#54e28e",
+      "id": 12
     }
   ],
   "users": [

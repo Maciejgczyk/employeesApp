@@ -1,0 +1,11 @@
+@import "src/app/styles/_mixins";
+@import "src/app/styles/_variables";
+
+.container {
+  margin: 42px 0;
+
+  &__form--fields {
+    display: flex;
+    flex-direction: column;
+  }
+}

@@ -63,6 +63,10 @@ export class EmployeesService {
     return this.http.delete<IEmployee>(`${this.baseUrl}/${employeeId}`);
   }
 
+  saveEmployee(employee: IEmployee): Observable<IEmployee> {
+    return this.http.put<IEmployee>(`${this.baseUrl}/${employee?.id}`, employee)
+  }
+
   searchEmployees(value: string = ''): Observable<IEmployeeDetails[]> {
     return this.getEmployeesWithDetails().pipe(
       map((employees) =>
