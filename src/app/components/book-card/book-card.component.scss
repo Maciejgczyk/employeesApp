@@ -1,7 +1,11 @@
 @import 'src/app/styles/_variables';
 @import 'src/app/styles/_mixins';
 
-.employee {
+:host {
+  margin-right: 8px;
+}
+
+.book {
   cursor: pointer;
   transition: .1s;
   padding: 24px 16px;
@@ -56,17 +60,17 @@
     color: $white;
   }
 
-  &__company {
+  &__client {
     @include flex-vertical-center;
     margin: 4px 0 14px 0;
   }
 
-  &__company--name {
+  &__client--name {
     font-size: 14px;
     color: $blue;
   }
 
-  &__company--color {
+  &__client--color {
     width: 10px;
     height: 10px;
 

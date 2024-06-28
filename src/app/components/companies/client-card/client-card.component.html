@@ -1,0 +1,26 @@
+<div class="client">
+  <app-add-client
+    *ngIf="editedClientId === client.id; else clientInfo"
+    [editedClient]="client"
+    [actionName]="'Save changes'"
+    (onSave)="editedClientId = null"
+  ></app-add-client>
+  <ng-template #clientInfo>
+    <div class="client__info">
+      <span class="client__info--name">{{ client.name }}</span>
+      <div
+        [ngStyle]="{ background: client.color }"
+        class="client__info--color"
+      ></div>
+    </div>
+    <div class="client__actions">
+      <button mat-icon-button (click)="editedClientId = client.id">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button (click)="deleteClient(client.id, client.name)" >
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+  </ng-template>
+
+</div>

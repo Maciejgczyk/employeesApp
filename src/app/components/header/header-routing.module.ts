@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import {RouterModule, Routes} from "@angular/router";
-import {CompaniesComponent} from "../companies/companies.component";
+import {ClientsComponent} from "../companies/clients.component";
 import {SettingsComponent} from "../settings/settings.component";
 
 const routes: Routes = [
   {
-    path: 'companies',
-    component: CompaniesComponent
+    path: 'clients',
+    component: ClientsComponent
   },
   {
     path: 'settings',

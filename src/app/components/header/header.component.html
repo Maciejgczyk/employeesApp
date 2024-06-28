@@ -1,12 +1,15 @@
 <header class="header">
-  <input
-    [formControl]="search"
-    type="text"
-    class="header__input"
-    placeholder="Look for...">
+  <div class="filtering--options">
+    <input
+      [formControl]="search"
+      type="text"
+      class="header__input"
+      placeholder="Look for books...">
+
+  </div>
   <div class="header__options">
-    <button (click)="addEmployee()" class="header-btn" mat-button>Create employee</button>
-    <button  routerLink="/companies" class="header-btn" mat-button>Companies</button>
+    <button (click)="addBook()" class="header-btn" mat-button>Add book</button>
+    <button  routerLink="/clients" class="header-btn" mat-button>Clients</button>
     <button mat-button class="header-btn" [matMenuTriggerFor]="userOptions">{{ userData?.user?.nickname }}</button>
     <mat-menu #userOptions="matMenu">
       <button routerLink="/settings" mat-menu-item>

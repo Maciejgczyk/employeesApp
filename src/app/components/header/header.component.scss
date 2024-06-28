@@ -19,3 +19,35 @@
   font-size: 16px;
   margin-left: 16px;
 }
+
+.filtering--options {
+  display: flex;
+  flex-direction: column;
+}
+
+.filters {
+  font-size: 16px;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+mat-form-field {
+  max-width: 200px;
+  margin-right: 10px;
+
+  .mat-select-arrow {
+    color: #ffffff
+
+  }
+}
+
+mat-label, mat-select, .mat-select-value, .mat-select-arrow {
+  color: #ffffff
+}
+
+.filter {
+  font-size: 16px;
+}

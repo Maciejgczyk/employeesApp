@@ -1,11 +1,11 @@
 <button (click)="back()" type="submit" mat-flat-button color="primary" class="back-button">
   <mat-icon>keyboard_backspace</mat-icon>
 </button>
-<app-add-company [actionName]="'Create company'"></app-add-company>
+<app-add-client [actionName]="'Add client'"></app-add-client>
 <input placeholder="Look for.." class="input-field" [formControl]="search" />
 <div cdkDropList (cdkDropListDropped)="drop($event)">
-  <div *ngFor="let company of allCompanies" cdkDrag>
-    <app-company-card [company]="company"></app-company-card>
+  <div *ngFor="let client of allClients" cdkDrag>
+    <app-client-card [client]="client"></app-client-card>
     <mat-divider></mat-divider>
   </div>
 </div>

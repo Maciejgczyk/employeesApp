@@ -1,0 +1,46 @@
+<div class="container">
+  <h2 class="container__title">Create book</h2>
+  <form [formGroup]="bookForm" (ngSubmit)="createBook()">
+    <div class="container__form--fields">
+      <mat-form-field class="container__form--fields--input" appearance="fill">
+        <mat-label>Title</mat-label>
+        <input formControlName="title" matInput placeholder="The Hobbit..." />
+        <mat-error *ngIf="bookForm.get('title').errors?.required">Title is required</mat-error>
+        <mat-error *ngIf="bookForm.get('title').errors?.minlength">Title requires minimum 2 characters</mat-error>
+      </mat-form-field>
+      <mat-form-field class="container__form--fields--input" appearance="fill">
+        <mat-label>Client</mat-label>
+        <mat-select formControlName="clientId" >
+          <mat-option *ngFor="let client of allClients" [value]="client.id">
+            {{ client.name }}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="bookForm.get('clientId').errors?.required && bookForm.get('clientId').touched">Client name is required</mat-error>
+      </mat-form-field>
+      <mat-form-field class="container__form--fields--input" appearance="fill">
+        <mat-label>Genre</mat-label>
+        <mat-select formControlName="genre"  multiple>
+          <mat-option *ngFor="let genre of genres" [value]="genre">
+            {{ genre }}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="bookForm.get('genre').errors?.required">Genre is required</mat-error>
+      </mat-form-field>
+      <mat-form-field class="container__form--fields--input" appearance="fill">
+        <mat-label>Author</mat-label>
+        <input type='text' formControlName="author" matInput placeholder="Stephen King..." />
+        <mat-error *ngIf="bookForm.get('author').errors?.required">Author is required</mat-error>
+      </mat-form-field>
+      <mat-form-field class="container__form--fields--input" appearance="fill">
+        <mat-label>Category</mat-label>
+        <mat-select formControlName="category"  multiple>
+          <mat-option *ngFor="let category of categories" [value]="category">
+            {{ category }}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="bookForm.get('category').errors?.required">Category is required</mat-error>
+      </mat-form-field>
+    </div>
+    <button [disabled]='bookForm.invalid' type="submit" mat-flat-button color="primary">Create</button>
+  </form>
+</div>

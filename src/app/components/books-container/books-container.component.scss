@@ -1,0 +1,14 @@
+@import 'src/app/styles/_mixins';
+
+:host {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.filters {
+  width: 100%;
+}
+
+mat-form-field {
+  margin-right: 10px;
+}

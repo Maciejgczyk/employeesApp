@@ -1,0 +1,23 @@
+<div class="book">
+  <div class="book__settings">
+    <button [routerLink]="['/employee', book?.data?.id]" class="book__delete" mat-icon-button>
+      <mat-icon>edit</mat-icon>
+    </button>
+    <button (click)="deleteBook()" mat-icon-button>
+      <mat-icon>delete</mat-icon>
+    </button>
+  </div>
+  <span class="book__name"> {{ book?.data?.title }}</span>
+  <span class="book__position"> {{ book?.data?.author }} </span>
+  <span class="book__email">{{ book?.data?.genre }};</span>
+  <span class="book__email">{{ book?.data?.category }}</span>
+
+  <div class="book__client">
+    <div
+      [ngStyle]="{'background': book?.client?.color}"
+      class="book__client--color"
+    ></div>
+    <span class="book__client--name"> {{ book?.client?.name }} </span>
+  </div>
+  <span class="book__technology">{{ book?.data?.userReview ? book?.data?.userReview.length : '0' }} reviews</span>
+</div>

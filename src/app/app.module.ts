@@ -5,41 +5,41 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainComponent } from './components/main/main.component';
 import { HeaderComponent } from './components/header/header.component';
-import { EmployeesContainerComponent } from './components/employees-container/employees-container.component';
-import { EmployeeCardComponent } from './components/employee-card/employee-card.component';
+import { BooksContainerComponent } from './components/books-container/books-container.component';
+import { BookCardComponent } from './components/book-card/book-card.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { MaterialModule } from './shared/modules/material.module';
-import { AddEmployeeComponent } from './components/dialogs/add-employee/add-employee.component';
+import { AddBookComponent } from './components/dialogs/add-book/add-book.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
-import { CompaniesComponent } from './components/companies/companies.component';
+import { ClientsComponent } from './components/companies/clients.component';
 import { HeaderRoutingModule } from './components/header/header-routing.module';
-import { AddCompanyComponent } from './components/companies/add-company/add-company.component';
+import { AddClientComponent } from './components/companies/add-client/add-client.component';
 import { ColorPickerModule } from 'ngx-color-picker';
 import { ConfirmationComponent } from './components/dialogs/confirmation/confirmation.component';
-import { CompanyCardComponent } from './components/companies/company-card/company-card.component';
+import { ClientCardComponent } from './components/companies/client-card/client-card.component';
 import { LoginComponent } from './components/login/login.component';
 import {TokenInterceptor} from "./shared/token.interceptor";
 import { RegisterComponent } from './components/register/register.component';
 import { SettingsComponent } from './components/settings/settings.component';
-import { EmployeeDetailsComponent } from './components/employee-details/employee-details.component';
+import { BookDetailsComponent } from './components/book-details/book-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
     HeaderComponent,
-    EmployeesContainerComponent,
-    EmployeeCardComponent,
-    AddEmployeeComponent,
-    CompaniesComponent,
-    AddCompanyComponent,
+    BooksContainerComponent,
+    BookCardComponent,
+    AddBookComponent,
+    ClientsComponent,
+    AddClientComponent,
     ConfirmationComponent,
-    CompanyCardComponent,
+    ClientCardComponent,
     LoginComponent,
     RegisterComponent,
     SettingsComponent,
-    EmployeeDetailsComponent,
+    BookDetailsComponent,
   ],
   imports: [
     BrowserModule,

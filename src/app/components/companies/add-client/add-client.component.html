@@ -1,10 +1,10 @@
-<form [formGroup]="companyForm" (ngSubmit)="createCompany()" class="form">
+<form [formGroup]="clientForm" (ngSubmit)="createClient()" class="form">
   <div class="form__fields">
-    <input formControlName="name" placeholder="Company name" class="form__fields--name"/>
+    <input formControlName="name" placeholder="Client name" class="form__fields--name"/>
     <div class="form__fields--color">
       <input
-        [(colorPicker)]="companyColor"
-        [style.background]="companyColor"
+        [(colorPicker)]="clientColor"
+        [style.background]="clientColor"
         (colorPickerChange)="formColorChange($event)"
       />
     </div>

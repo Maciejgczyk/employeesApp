@@ -30,16 +30,6 @@
     class="form__field"
     placeholder="Email"
   />
-  <ng-container
-    *ngIf="userForm.get('email').touched && userForm.get('email').invalid"
-  >
-    <mat-error *ngIf="userForm.get('email').errors?.required"
-      >Field is required</mat-error
-    >
-    <mat-error *ngIf="userForm.get('email').errors?.email"
-      >Enter valid email</mat-error
-    >
-  </ng-container>
   <button
     type="submit"
     mat-flat-button

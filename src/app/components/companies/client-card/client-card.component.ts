@@ -1,38 +1,38 @@
 import {Component, Input } from '@angular/core';
-import {ICompany} from "../../../interfaces/company.model";
+import {Client} from "../../../interfaces/client.model";
 import {ConfirmationComponent} from "../../dialogs/confirmation/confirmation.component";
 import {MatDialog} from "@angular/material/dialog";
-import {CompaniesService} from "../../../services/companies.service";
+import {ClientsService} from "../../../services/clients.service";
 import {SnackbarService} from "../../../services/snackbar.service";
 
 @Component({
-  selector: 'app-company-card',
-  templateUrl: './company-card.component.html',
-  styleUrls: ['./company-card.component.scss']
+  selector: 'app-client-card',
+  templateUrl: './client-card.component.html',
+  styleUrls: ['./client-card.component.scss']
 })
-export class CompanyCardComponent {
-  @Input() company: ICompany
-  editedCompanyId: number;
+export class ClientCardComponent {
+  @Input() client: Client
+  editedClientId: number;
 
   constructor(
     private dialog: MatDialog,
-    private companiesService: CompaniesService,
+    private clientsService: ClientsService,
     private snackbarService: SnackbarService
   ) {}
 
-  deleteCompany(companyId: number, companyName: string): void {
+  deleteClient(clientId: number, clientName: string): void {
     const confirmDialog = this.dialog.open(ConfirmationComponent, {
       data: {
-        title: 'Remove Company',
-        message: `Are you sure, you want to delete a company: ${companyName}?`,
+        title: 'Remove Client',
+        message: `Are you sure, you want to delete a client: ${clientName}?`,
       },
     });
     confirmDialog.afterClosed().subscribe((result) => {
       if (result === true) {
-        this.companiesService
-          .deleteCompany(companyId)
+        this.clientsService
+          .deleteClient(clientId)
           .subscribe(() => {
-            this.companiesService.reloadCompanies()
+            this.clientsService.reloadClients()
             this.snackbarService.openSnackbar('Deleted successfully')
           });
       }
